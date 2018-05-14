@@ -1,3 +1,3 @@
 # BandCampClone
 
-Для каждого компонента своя ветка: feature/ComponentName
+Для каждого компонента своя ветка: feature/ComponentNameComponent
