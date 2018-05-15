@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    align-items: center;
+    font-family: 'Arial', 'Calibri', sans-serif;
+}
+
+h1 {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    margin: 0 5px;
+}
+
+a {
+    color: inherit;
+    font-weight: bold;
+}
+
+.social-media-login-box {
+    display: flex;
+}
+
+.social-media-login-box__link {
+    margin: 0 5px;
+}
