@@ -1,0 +1,28 @@
+<div class="BandsCardsCarousel_Buttons">
+  <button class="BandsCardsCarousel_LeftButton"
+          (click)="moveLeft($event)"
+  >
+    &#8678;
+  </button>
+  <button
+    class="BandsCardsCarousel_RightButton"
+    (click)="moveRight($event)"
+  >
+    &#8680;
+  </button>
+</div>
+
+<div class="BandsCardsCarousel_Wrapper">
+  <div class="BandsCardsCarousel">
+
+    <app-band-card
+      *ngFor="let bandCard of bandsCardsData"
+      imageUrl={{bandCard.imageUrl}}
+      bandUrl="/garage"
+      title="Heartbeat by Alice Boman"
+      description="Alice Boman is electric on this new piano-heavy single."
+      genre="alternative">
+    </app-band-card>
+
+  </div>
+</div>
