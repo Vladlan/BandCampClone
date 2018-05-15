@@ -55,3 +55,7 @@
     margin-top: -27px;  /* 1/2 of height */
 }
 
+/*appearing of our view button*/
+.band-card__image:hover .view-btn {
+  display: block;
+}
