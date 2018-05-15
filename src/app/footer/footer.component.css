@@ -1,0 +1,17 @@
+.footer {
+    font-family: 'Arial', 'Calibri', sans-serif;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    font-weight: bold;
+    color: inherit;
+}
