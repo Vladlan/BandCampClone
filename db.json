@@ -1,0 +1,72 @@
+{
+  "bands": [
+    {
+      "id": "1",
+      "title": "band #1 Title",
+      "genre": "Electro",
+      "launchYear": "2017",
+      "imgUrl": "http://",
+      "description": "description of band #1",
+      "albums": [
+
+        {
+          "id": "b1.1",
+          "title": "title of album #1",
+          "imgUrl": "http://",
+          "band": "band #1 Title",
+          "genre": "Electro"
+        },
+
+        {
+          "id": "b1.2",
+          "title": "title of album #2",
+          "imgUrl": "http://",
+          "band": "band #1 Title",
+          "genre": "Electro"
+        },
+
+        {
+          "id": "b1.3",
+          "title": "title of album #3",
+          "imgUrl": "http://",
+          "band": "band #1 Title",
+          "genre": "Electro"
+        }
+      ]
+    },
+
+    {
+      "id": "2",
+      "title": "band #2 Title",
+      "genre": "Electro",
+      "launchYear": "2017",
+      "imgUrl": "http://",
+      "description": "description of band #2",
+      "albums": [
+        {
+          "id": "b2.1",
+          "title": "title of album #1",
+          "imgUrl": "http://",
+          "band": "band #2 Title",
+          "genre": "Electro"
+        },
+
+        {
+          "id": "b2.2",
+          "title": "title of album #2",
+          "imgUrl": "http://",
+          "band": "band #2 Title",
+          "genre": "Electro"
+        },
+
+        {
+          "id": "b2.3",
+          "title": "title of album #3",
+          "imgUrl": "http://",
+          "band": "band #2 Title",
+          "genre": "Electro"
+        }
+      ]
+    }
+  ]
+}
