@@ -2,6 +2,8 @@
     max-width: 250px;
     display: inline-block;
     text-decoration: none;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
 }
 
 .band-card__image{
@@ -14,6 +16,7 @@
 
 .band-card__title{
     font-size: 24px;
+    padding: 0 15px;
     margin-top: 9px;
     color: #000;
     text-decoration: none;
@@ -24,12 +27,14 @@
     font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 12px;
     margin: 5px 0;
+    padding: 0 15px;
 }
 
 .band-card__description{
     margin: 0;
     font-family: Georgia, Times, serif;
     margin-bottom: 9px;
+    padding: 0 15px;
     color: #000;
 }
 
