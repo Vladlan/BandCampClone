@@ -12,11 +12,11 @@ export class BandCardComponent {
   @Input() genre: string;
   @Input() bandUrl: string;
 
-  onEnter(div: string) {
-    console.log("mouse enter : " + div);
+  onEnter(el: any) {
+    el.target.childNodes[0].childNodes[1].style.display = "block";
   }
 
-  onLeave(div: string) {
-    console.log("mouse leave :" + div);
+  onLeave(el: any) {
+    el.target.childNodes[0].childNodes[1].style.display = "none";
   }
 }

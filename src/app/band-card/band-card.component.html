@@ -1,4 +1,8 @@
-<a class="band-card" [href]="bandUrl" (mouseenter)="onEnter('div a')" (mouseleave)="onLeave('div A')">
+<a class="band-card" 
+  [href]="bandUrl" 
+  (mouseenter)="onEnter($event)" 
+  (mouseleave)="onLeave($event)"
+>
   <div class="band-card__image">
     <img [src]="imageUrl" alt="cover" />
     <span class="view-btn">
@@ -12,6 +16,6 @@
     {{genre}}
   </p>
   <p class="band-card__description">
-    {{genre}}
+    {{description}}
   </p>
 </a>
