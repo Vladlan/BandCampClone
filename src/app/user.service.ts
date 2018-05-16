@@ -15,7 +15,8 @@ export class UserService {
     responseType: 'token id_token',
     audience: 'https://bandcampclone.eu.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200',
-    scope: 'openid profile'
+    scope: 'openid profile',
+    connection: 'google-oauth2'
   });
 
   constructor(public router: Router) { }
