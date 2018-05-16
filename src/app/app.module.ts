@@ -7,6 +7,7 @@ import { TopBandsListComponent } from './top-bands-list/top-bands-list.component
 import { BandsListItemComponent } from './bands-list-item/bands-list-item.component';
 import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { BandCardComponent } from './band-card/band-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     TopBandsListComponent,
     BandsListItemComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BandCardComponent
   ],
   imports: [
     BrowserModule

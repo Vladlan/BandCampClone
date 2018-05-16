@@ -1,0 +1,25 @@
+<a class="band-card"
+   [href]="bandUrl"
+   >
+
+  <div class="band-card__image">
+    <img [src]="imageUrl" alt="cover" />
+
+    <span class="view-btn">
+      view
+    </span>
+
+  </div>
+
+  <div class="band-card__title">
+    {{title}}
+  </div>
+
+  <p class="band-card__genre">
+    {{genre}}
+  </p>
+
+  <p class="band-card__description">
+    {{description}}
+  </p>
+</a>
