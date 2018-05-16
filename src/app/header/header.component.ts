@@ -7,15 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isLogIned: Boolean = false;
-<<<<<<< HEAD
   constructor() {}
-=======
-  constructor() { 
 
-  }
->>>>>>> feature/HeaderComponent
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
