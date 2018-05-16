@@ -1,12 +1,14 @@
 <div class="BandsCardsCarousel_Buttons">
   <button class="BandsCardsCarousel_LeftButton"
           (click)="moveLeft($event)"
+          [disabled]="switcher === 'left'"
   >
     &#8678;
   </button>
   <button
     class="BandsCardsCarousel_RightButton"
     (click)="moveRight($event)"
+    [disabled]="switcher !== 'left'"
   >
     &#8680;
   </button>
@@ -16,7 +18,10 @@
   <div class="BandsCardsCarousel">
 
     <app-band-card
-      *ngFor="let bandCard of bandsCardsData"
+      *ngFor="let bandCard of bandsCardsData; let i = index"
+      comment="'here goes logic for animation'"
+      [ngClass]=" (switcher === 'left' && i < 4) ?
+      ( 'band-card-disabled' ) : ( (switcher === 'right' && i > 4) ? ('band-card-disabled') : ('none') )"
       imageUrl={{bandCard.imageUrl}}
       bandUrl="/garage"
       title="Heartbeat by Alice Boman"

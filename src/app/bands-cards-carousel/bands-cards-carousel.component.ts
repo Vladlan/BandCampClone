@@ -6,6 +6,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./bands-cards-carousel.component.css']
 })
 export class BandsCardsCarouselComponent implements OnInit {
+  cssClassToDisable = 'band-card-disabled';
 
   bandsCardsData = [
     {
@@ -80,19 +81,29 @@ export class BandsCardsCarouselComponent implements OnInit {
     }
   ];
 
-  constructor() {
-  }
+  switcher = 'off';
+
+  constructor() {}
 
   ngOnInit() {}
 
   moveRight() {
-    this.bandsCardsData.splice(0, 1);
+    // this.bandsCardsData.splice(0, 1);
     // event.target.childNodes[0].childNodes[1].style.display = "block";
+    this.switcher = 'right';
   }
+
   moveLeft(event: any) {
-    console.log(event.target);
-    this.bandsCardsData.splice(4, 1);
+    console.log(event);
+    // this.bandsCardsData.splice(4, 1);
+    // let renewedCard =  this.bandsCardsData.splice(0, 1)[0];
+    // console.log(renewedCard);
+    // renewedCard.cssClass = this.cssClassToDisable;
+    // this.bandsCardsData[0].cssClass = this.cssClassToDisable;
+    // console.log(this.bandsCardsData);
+    // setTimeout( () => { this.bandsCardsData.unshift(renewedCard); } , 1000;
     // event.target.childNodes[0].childNodes[1].style.display = "block";
+    this.switcher = 'left';
   }
 
 }
