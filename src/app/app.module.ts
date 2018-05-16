@@ -9,6 +9,7 @@ import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BandCardComponent } from './band-card/band-card.component';
 import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-carousel.component';
+import { BandPageComponent } from './band-page/band-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-
     HeaderComponent,
     FooterComponent,
     BandCardComponent,
-    BandsCardsCarouselComponent
+    BandsCardsCarouselComponent,
+    BandPageComponent
   ],
   imports: [
     BrowserModule
