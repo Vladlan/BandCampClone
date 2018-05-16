@@ -13,6 +13,9 @@ import { BandCardComponent } from './band-card/band-card.component';
 import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-carousel.component';
 import { SearchComponent } from './header/search/search.component';
 import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards-list-page.component';
+import {BandsService} from './bands.service';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,9 +33,11 @@ import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards
   imports: [
     BrowserModule,
     FormsModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [BandsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

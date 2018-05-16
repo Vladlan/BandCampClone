@@ -1,14 +1,22 @@
 <header class="header">
   <div class="header__logo">
-    <img src="https://s4.bcbits.com/img/homepage_2015/bc-logo@2x.png" alt="" class="logo" width="156px" height="25px">
+    <a routerLink="/">
+    <img src="https://s4.bcbits.com/img/homepage_2015/bc-logo@2x.png"
+         alt=""
+         class="logo"
+         width="156px"
+         height="25px">
+    </a>
     <h1>BandCampClone</h1>
     <nav>
       <ul>
         <li *ngIf="isLogIned">
-          <a href="/profile">Your profile</a>
+          <a routerLink="/bandsList">
+            Your profile
+          </a>
         </li>
         <li *ngIf="!isLogIned">
-          
+
           <div class="social-megia-login-box">
             <span>sign in:</span>
             <a href="#" class="social-media-login-box__link">
