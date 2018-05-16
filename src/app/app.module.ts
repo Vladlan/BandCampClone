@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BandCardComponent } from './band-card/band-card.component';
 import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-carousel.component';
 import { SearchComponent } from './header/search/search.component';
+import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards-list-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SearchComponent } from './header/search/search.component';
     FooterComponent,
     BandCardComponent,
     BandsCardsCarouselComponent,
-    SearchComponent
+    SearchComponent,
+    BandsCardsListPageComponent
   ],
   imports: [
     BrowserModule,
