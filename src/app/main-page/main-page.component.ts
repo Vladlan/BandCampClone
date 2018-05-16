@@ -15,6 +15,7 @@ export class MainPageComponent implements OnInit {
   }
 
   loadBandsInBandsService() {
+    if ( this.bandsService.bands.length === 0 ) {
     this.bandsService.assignBandsToService()
       .subscribe((data) => {
           console.log('data: ', data);
@@ -26,6 +27,7 @@ export class MainPageComponent implements OnInit {
           console.log('completed in ngOnInit');
         }
       );
+    }
   }
 
 }

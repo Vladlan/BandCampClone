@@ -14,6 +14,7 @@ export class BandsService {
   }
 
   assignBandsToService() {
+
     const ourBandsObservable = Observable.create((observer) =>  {
       this.getBands()
         .subscribe((bands: any) => {
