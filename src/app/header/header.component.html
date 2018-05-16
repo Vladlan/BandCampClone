@@ -1,5 +1,5 @@
-<div class="wrapper">
-  <header>
+<header class="header">
+  <div class="header__logo">
     <img src="https://s4.bcbits.com/img/homepage_2015/bc-logo@2x.png" alt="" class="logo" width="156px" height="25px">
     <h1>BandCampClone</h1>
     <nav>
@@ -8,31 +8,28 @@
           <a href="/profile">Your profile</a>
         </li>
         <li *ngIf="!isLogIned">
+          
           <div class="social-megia-login-box">
-            SignIn via:
+            <span>sign in:</span>
             <a href="#" class="social-media-login-box__link">
               <button>
-                vk
+                VK
               </button>
             </a>
             <a href="#" class="social-media-login-box__link">
               <button>
-                Google
+                GL
               </button>
             </a>
             <a href="#" class="social-media-login-box__link">
               <button>
-                Facebook
+                FB
               </button>
             </a>
           </div>
         </li>
-        <li>
-          <a href="/list">Bands list</a>
-        </li>
       </ul>
     </nav>
-    <!-- <app-search></app-search> -->
-    <app-search></app-search>
-  </header>
-</div>
+  </div>
+  <app-search class="header__search" ></app-search>
+</header>

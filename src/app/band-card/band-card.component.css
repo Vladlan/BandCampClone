@@ -6,6 +6,7 @@
   border-radius: 4px;
   margin: 25px 5px;
   overflow: hidden;
+  background-color: white;
 }
 
 .band-card__image {
@@ -60,4 +61,10 @@
 /*appearing of our view button*/
 .band-card__image:hover .view-btn {
   display: block;
+}
+
+@media (max-width: 480px) {
+  .band-card {
+    max-width: 100%;
+  }
 }
