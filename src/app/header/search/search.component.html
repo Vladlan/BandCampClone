@@ -1,0 +1,13 @@
+<div class="search">
+  <input 
+    class="search__input"
+    [(ngModel)]="searchQuery" 
+    type="search" 
+    id="search-input"
+    placeholder="Search band by name, genre or launch year...">
+  <a href="/list{{searchQuery ? '?q='+searchQuery : ''}}">
+    <button class="search__button">
+      Search
+    </button>
+  </a>
+</div>

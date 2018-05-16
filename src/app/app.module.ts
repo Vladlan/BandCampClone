@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -9,6 +10,7 @@ import {HeaderComponent} from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BandCardComponent } from './band-card/band-card.component';
 import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-carousel.component';
+import { SearchComponent } from './header/search/search.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-
     HeaderComponent,
     FooterComponent,
     BandCardComponent,
-    BandsCardsCarouselComponent
+    BandsCardsCarouselComponent,
+    SearchComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
