@@ -1,3 +1,31 @@
+.carousel{
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel__nav{
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 15px;
+}
+
+.stepper{
+  border: 1px solid #75949c;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.stepper > button{
+  border: 0;
+  padding: 0;
+  background: #9dc3ce;
+  padding: 5px 20px;
+}
+
+.stepper > button:first-child{
+  border-right: solid 1px #75949c;
+}
+
 .BandsCardsCarousel {
   display: flex;
   width: 90vw;

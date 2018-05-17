@@ -23,16 +23,7 @@ export class BandsCardsListPageComponent implements OnInit {
     this.loadBandsInBandsService();
     console.log( 'this.route.snapshot', this.route.snapshot );
     console.log(this.route.snapshot.params['searchStr']);
-    Observable.from(this.route.snapshot.params['searchStr'])
-      .subscribe((data) => {
-          console.log('data: ', data);
-        },
-        (err) => {
-          console.log('error: ', err);
-        },
-        () => {
-          console.log('completed in ngOnInit');
-        });
+    this.searchStr = this.route.snapshot.params['searchStr'];
   }
 
   assignBandsFromServiceToThisComponent() {
