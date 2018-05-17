@@ -6,3 +6,7 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+
+.MainPageComponent h1 {
+  color: crimson;
+}

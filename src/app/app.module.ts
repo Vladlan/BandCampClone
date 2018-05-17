@@ -16,6 +16,7 @@ import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards
 import {BandsService} from './bands.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
+import { BandPageComponent } from './band-page/band-page.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {AppRoutingModule} from './app-routing.module';
     BandCardComponent,
     BandsCardsCarouselComponent,
     SearchComponent,
-    BandsCardsListPageComponent
+    BandsCardsListPageComponent,
+    BandPageComponent
   ],
   imports: [
     BrowserModule,
