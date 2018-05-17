@@ -1,49 +1,50 @@
 <div class="BandPageComponent">
   <h1>BandPageComponent</h1>
 
-
-
   <div class="row">
     <div class="column">
-      <div class="BandPage_mainImg">
+      <div class="BandPage_mainImg"
+           [style.background-image]="(currentBandData.imageUrl.length > 7) ?
+           'url(' + currentBandData.imageUrl + ')' :
+           'linear-gradient(to right, rgba(255, 0, 0, 0), rgb(147, 190, 255))'"
+      >
         <h3>Main img</h3>
       </div>
     </div>
   </div>
 
-
   <div class="row">
     <div class="column _20">
 
 
-        <div class="BandPage_AlbumsList">
+      <div class="BandPage_AlbumsList">
 
-          <div class="AlbumComponent">
+        <div class="AlbumComponent">
 
-            <div class="AlbumComponent_Img">
-              albumImg
-            </div>
-
-            <div class="AlbumComponent_Title">
-              <b>Album Title</b>
-            </div>
-
+          <div class="AlbumComponent_Img">
+            albumImg
           </div>
 
-
-          <div class="AlbumComponent">
-
-            <div class="AlbumComponent_Img">
-              albumImg
-            </div>
-
-            <div class="AlbumComponent_Title">
-              <b>Album Title</b>
-            </div>
-
+          <div class="AlbumComponent_Title">
+            <b>Album Title</b>
           </div>
 
         </div>
+
+
+        <div class="AlbumComponent">
+
+          <div class="AlbumComponent_Img">
+            albumImg
+          </div>
+
+          <div class="AlbumComponent_Title">
+            <b>Album Title</b>
+          </div>
+
+        </div>
+
+      </div>
 
 
     </div>
@@ -51,26 +52,20 @@
       <div class="BandPage_BandInformation">
 
         <div class="BandPage_BandInformation_Title">
-          <b>BandInformation_Title</b>
+          <b>{{currentBandData.title}}</b>
           <div class="BandPage_BandInformation_Year">
-            BandInformation_Year
+            {{currentBandData.launchYear}}
           </div>
         </div>
 
 
-
         <div class="BandPage_BandInformation_Description">
-          description of band #1
+          {{currentBandData.description}}
         </div>
 
       </div>
     </div>
   </div>
-
-
-
-
-
 
 
 </div>

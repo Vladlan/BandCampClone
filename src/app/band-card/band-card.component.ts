@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './band-card.component.html',
   styleUrls: ['./band-card.component.css']
 })
+
 export class BandCardComponent {
   @Input() title: string;
   @Input() imageUrl: string;

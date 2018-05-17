@@ -5,8 +5,8 @@
     *ngFor="let bandCard of bandsCardsData; let i = index"
     imageUrl={{bandCard.imageUrl}}
     bandUrl="/garage"
-    title="Heartbeat by Alice Boman"
-    description="Alice Boman is electric on this new piano-heavy single."
-    genre="alternative">
+    title="{{bandCard.title}}"
+    description="{{bandCard.description}}"
+    genre="{{bandCard.genre}}">
   </app-band-card>
 </div>
