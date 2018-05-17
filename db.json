@@ -12,7 +12,7 @@
         {
           "id": "b1.1",
           "title": "title of album #1",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a0248984747_2.jpg",
           "band": "band #1 Title",
           "genre": "Electro"
         },
@@ -20,7 +20,7 @@
         {
           "id": "b1.2",
           "title": "title of album #2",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a3496869519_2.jpg",
           "band": "band #1 Title",
           "genre": "Electro"
         },
@@ -28,7 +28,7 @@
         {
           "id": "b1.3",
           "title": "title of album #3",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a2694884296_2.jpg",
           "band": "band #1 Title",
           "genre": "Electro"
         }
@@ -46,7 +46,7 @@
         {
           "id": "b2.1",
           "title": "title of album #1",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
           "band": "band #2 Title",
           "genre": "Electro"
         },
@@ -54,7 +54,7 @@
         {
           "id": "b2.2",
           "title": "title of album #2",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
           "band": "band #2 Title",
           "genre": "Electro"
         },
@@ -62,7 +62,7 @@
         {
           "id": "b2.3",
           "title": "title of album #3",
-          "imageUrl": "http://",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #2 Title",
           "genre": "Electro"
         }

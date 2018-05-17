@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {BandsService} from '../bands.service';
 
@@ -28,24 +28,48 @@ export interface BandData {
 
 export class BandPageComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, private bandsService: BandsService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private bandsService: BandsService
+  ) {}
 
   currentBandData: BandData;
   currentBandTitle: string;
 
   ngOnInit() {
-    console.log('this.route', this.route.snapshot.params['name']);
+    this.loadBandsInBandsService();
+  }
+
+  getCurrentBandDataFromService() {
     this.currentBandTitle = this.route.snapshot.params['name'];
-    console.log(this.bandsService.bands);
-    for (let i = 0; i < this.bandsService.bands.length; i++ ) {
-      console.log('this.bandsService.bands[i][\'title\']', this.bandsService.bands[i]['title']);
-      if (this.bandsService.bands[i]['title'].toLowerCase() === this.currentBandTitle.toLowerCase() ) {
-        console.log('assigning');
-        this.currentBandData = Object.assign({}, this.bandsService.bands[i] );
+    for (let i = 0; i < this.bandsService.bands.length; i++) {
+      if (this.bandsService.bands[i]['title'].toLowerCase() === this.currentBandTitle.toLowerCase()) {
+        this.currentBandData = Object.assign({}, this.bandsService.bands[i]);
       }
     }
-    console.log('this.currentBandTitle', this.currentBandTitle);
-    console.log('this.currentBandData', this.currentBandData);
+  }
+
+  loadBandsInBandsService() {
+    if (this.currentBandData === undefined) {
+      if (this.bandsService.bands.length === 0) {
+        this.bandsService.assignBandsToService()
+          .subscribe((data) => {
+              this.getCurrentBandDataFromService();
+            },
+            (err) => {
+              console.log('error: ', err);
+            },
+            () => {
+              console.log('completed in ngOnInit of BandPageComponent');
+            }
+          );
+      } else {
+        this.getCurrentBandDataFromService();
+      }
+    } else {
+      this.getCurrentBandDataFromService();
+    }
   }
 
 }

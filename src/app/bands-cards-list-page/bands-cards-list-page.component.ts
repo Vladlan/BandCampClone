@@ -8,79 +8,6 @@ import {BandsService} from '../bands.service';
 })
 export class BandsCardsListPageComponent implements OnInit {
 
-  // bandsCardsData = [
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2482547434_2.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a1884813622_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2482547434_2.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a0008085777_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2482547434_2.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2810862928_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2810862928_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2810862928_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2810862928_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   },
-  //   {
-  //     imageUrl: 'https://f4.bcbits.com/img/a2810862928_16.jpg',
-  //     bandUrl: '/garage',
-  //     title: 'Heartbeat by Alice Boman',
-  //     description: 'Alice Boman is electric on this new piano-heavy single.',
-  //     genre: 'alternative'
-  //   }
-  // ];
-
   bandsCardsData = [];
 
   constructor(private bandsService: BandsService) {}
@@ -101,14 +28,13 @@ export class BandsCardsListPageComponent implements OnInit {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
           .subscribe((data) => {
-              console.log('data: ', data);
               this.assignBandsFromServiceToThisComponent();
             },
             (err) => {
               console.log('error: ', err);
             },
             () => {
-              console.log('completed in ngOnInit');
+              console.log('completed in ngOnInit of BandsCardsListPageComponent');
             }
           );
       } else {
