@@ -1,50 +1,14 @@
-<!-- <div class="BandsCardsCarousel_Buttons">
-  <button class="BandsCardsCarousel_LeftButton"
-          (click)="moveLeft($event)"
-          [disabled]="switcher === 'left'"
-  >
-    &#8678;
-  </button>
-  <button
-    class="BandsCardsCarousel_RightButton"
-    (click)="moveRight($event)"
-    [disabled]="switcher !== 'left'"
-  >
-    &#8680;
-  </button>
-</div>
-
-<div class="BandsCardsCarousel_Wrapper">
-  <div class="BandsCardsCarousel">
-
-    <app-band-card
-      *ngFor="let bandCard of bandsCardsData; let i = index"
-      comment="'here goes logic for animation'"
-      [ngClass]=" (switcher === 'left' && i < 4) ?
-      ( 'band-card-disabled' ) : ( (switcher === 'right' && i > 4) ? ('band-card-disabled') : ('none') )"
-      imageUrl={{bandCard.imageUrl}}
-      bandUrl="/garage"
-      title="Heartbeat by Alice Boman"
-      description="Alice Boman is electric on this new piano-heavy single."
-      genre="alternative">
+<div class="carousel">
+  <nav class="carousel__nav">
+    <div class="stepper">
+      <button (click)="slickModal.slickPrev()">←</button>
+      <button (click)="slickModal.slickNext()">→</button>
+    </div>
+  </nav>
+  <ngx-slick class="carousel_inner" #slickModal="slick-modal" [config]="slideConfig">
+    <app-band-card ngxSlickItem class="slide" *ngFor="let band of bands; let i = index" imageUrl={{band.imageUrl}}
+      bandUrl={{band.imageUrl}} title={{band.title}} description={{band.description}}
+      genre={{band.genre}}>
     </app-band-card>
-
-  </div>
-</div> -->
-
-
-<ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
-  <app-band-card
-    ngxSlickItem
-    class="slide"
-    *ngFor="let bandCard of bandsCardsData; let i = index"
-    imageUrl={{bandCard.imageUrl}}
-    bandUrl="/garage"
-    title="Heartbeat by Alice Boman"
-    description="Alice Boman is electric on this new piano-heavy single."
-    genre="alternative">
-  </app-band-card>
-</ngx-slick>
-
-<button (click)="slickModal.slickNext()">Next</button>
-<button (click)="slickModal.slickPrev()">Prev</button>
+  </ngx-slick>
+</div>

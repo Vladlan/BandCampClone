@@ -8,25 +8,38 @@ import {BandsService} from '../bands.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private bandsService: BandsService) { }
+  bandsCardsData = [];
+
+  constructor(private bandsService: BandsService) {}
 
   ngOnInit() {
     this.loadBandsInBandsService();
+    console.log(this.bandsCardsData);
+  }
+
+  assignBandsFromServiceToThisComponent() {
+    for (let i = 0; i < this.bandsService.bands.length; i++) {
+      this.bandsCardsData.push(Object.assign({}, this.bandsService.bands[i]));
+    }
   }
 
   loadBandsInBandsService() {
-    if ( this.bandsService.bands.length === 0 ) {
-    this.bandsService.assignBandsToService()
-      .subscribe((data) => {
-          console.log('data: ', data);
-        },
-        (err) => {
-          console.log('error: ', err);
-        },
-        () => {
-          console.log('completed in ngOnInit');
-        }
-      );
+    if (this.bandsCardsData.length === 0) {
+      if (this.bandsService.bands.length === 0) {
+        this.bandsService.assignBandsToService()
+          .subscribe((data) => {
+              this.assignBandsFromServiceToThisComponent();
+            },
+            (err) => {
+              console.log('error: ', err);
+            },
+            () => {
+              console.log('completed in ngOnInit of mainpage');
+            }
+          );
+      } else {
+        this.assignBandsFromServiceToThisComponent();
+      }
     }
   }
 
