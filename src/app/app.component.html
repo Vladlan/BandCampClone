@@ -1,6 +1,8 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
 
+<app-admin-bar *ngIf="isLogIned" ></app-admin-bar>
+
+<router-outlet></router-outlet>
 <!--<app-main-page></app-main-page>-->
 <!--<app-bands-cards-list-page></app-bands-cards-list-page>-->
 <app-footer></app-footer>
