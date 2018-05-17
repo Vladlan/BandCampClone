@@ -18,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './band-page/band-page.component';
 import { BandAlbumComponent } from './band-album/band-album.component';
+import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BandAlbumComponent } from './band-album/band-album.component';
     SearchComponent,
     BandsCardsListPageComponent,
     BandPageComponent,
-    BandAlbumComponent
+    BandAlbumComponent,
+    BandNameGenreYearFilter
   ],
   imports: [
     BrowserModule,

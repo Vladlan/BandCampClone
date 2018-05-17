@@ -5,7 +5,7 @@
     type="search"
     id="search-input"
     placeholder="Search band by name, genre or launch year...">
-  <a href="/list{{searchQuery ? '?q='+searchQuery : ''}}">
+  <a routerLink="/bandsList/{{searchQuery}}">
     <button class="search__button">
       Search
     </button>

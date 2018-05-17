@@ -6,6 +6,7 @@ import {BandPageComponent} from './band-page/band-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
+  { path: 'bandsList/:searchStr', component: BandsCardsListPageComponent },
   { path: 'bandsList', component: BandsCardsListPageComponent },
   { path: 'band/:name', component: BandPageComponent }
 ];

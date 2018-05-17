@@ -11,7 +11,6 @@ export class SearchComponent implements OnInit {
   searchQuery: String = '';
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

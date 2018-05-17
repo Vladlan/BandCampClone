@@ -4,3 +4,7 @@
   width: 100%;
   text-align: center;
 }
+
+.BandsCardsListPage h1, h2{
+  color: crimson;
+}
