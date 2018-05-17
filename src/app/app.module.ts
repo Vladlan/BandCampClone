@@ -17,6 +17,7 @@ import {BandsService} from './bands.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './band-page/band-page.component';
+import { BandAlbumComponent } from './band-album/band-album.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BandPageComponent } from './band-page/band-page.component';
     BandsCardsCarouselComponent,
     SearchComponent,
     BandsCardsListPageComponent,
-    BandPageComponent
+    BandPageComponent,
+    BandAlbumComponent
   ],
   imports: [
     BrowserModule,
