@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlickModule } from 'ngx-slick';
-
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { TopBandsListComponent } from './top-bands-list/top-bands-list.component';
@@ -19,6 +18,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './band-page/band-page.component';
 import { BandAlbumComponent } from './band-album/band-album.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
+import { HeroComponent } from './hero/hero.component';
+import { LocalStorage } from './localstorage.service';
 
 @NgModule({
   declarations: [
@@ -34,16 +35,18 @@ import { AdminBarComponent } from './admin-bar/admin-bar.component';
     BandsCardsListPageComponent,
     BandPageComponent,
     BandAlbumComponent,
-    AdminBarComponent
+    AdminBarComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     SlickModule.forRoot(),
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [BandsService],
+  providers: [BandsService, LocalStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

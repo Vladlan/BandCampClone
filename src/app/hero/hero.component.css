@@ -1,0 +1,53 @@
+.badge {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.badge__container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  height: 58px;
+  margin: 20px;
+}
+.badge__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-radius: 6px;
+  text-align: center;
+}
+.badge__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.badge__link:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.8;
+}
+.badge__item {
+  fill: black;
+  margin-top: 6%;
+  width: 100%;
+  height: 66%;
+}
+
+.gift .badge__link {
+  border: 1px solid rgba(255, 255, 255, 0);
+  background: rgba(37, 37, 37, 1);
+}
+.gift .badge__link:hover {
+  background: rgba(37, 37, 37, 0.9);
+}
+.gift .badge__link:active {
+  background-color: rgba(37, 37, 37, 1);
+  opacity: 0.8;
+}
+.gift .badge__item {
+  fill: white;
+}
