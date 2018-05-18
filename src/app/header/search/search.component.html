@@ -1,12 +1,18 @@
 <div class="search">
   <input
-    class="search__input"
+    class="searchInput"
     [(ngModel)]="searchQuery"
     type="search"
-    id="search-input"
+    id="searchInput"
     placeholder="Search band by name, genre or launch year...">
-  <a routerLink="/bandsList/{{searchQuery}}">
-    <button class="search__button">
+  <a
+    routerLink="/bandsList"
+    [queryParams]="{ 'searchQuery' :searchQuery}"
+  >
+    <button
+      id="searchButton"
+      class="search__button"
+    >
       Search
     </button>
   </a>

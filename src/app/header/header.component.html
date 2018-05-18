@@ -10,11 +10,13 @@
     <h1>BandCampClone</h1>
     <nav>
       <ul>
+
         <li *ngIf="isLogIned">
           <a routerLink="/bandsList">
             Your profile
           </a>
         </li>
+
         <li *ngIf="!isLogIned">
 
           <div class="social-megia-login-box">
@@ -35,7 +37,9 @@
               </button>
             </a>
           </div>
+
         </li>
+
       </ul>
     </nav>
   </div>

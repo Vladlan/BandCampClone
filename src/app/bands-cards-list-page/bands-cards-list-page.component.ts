@@ -12,25 +12,51 @@ export class BandsCardsListPageComponent implements OnInit {
 
   bandsCardsData = [];
   searchStr: string;
+  inputStr: string;
+  searchButton: any;
+  searchButton$: any;
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private bandsService: BandsService
-  ) {}
-
-  ngOnInit() {
-    this.loadBandsInBandsService();
-    console.log( 'this.route.snapshot', this.route.snapshot );
-    console.log(this.route.snapshot.params['searchStr']);
-    this.searchStr = this.route.snapshot.params['searchStr'];
+  constructor(private router: Router,
+              private route: ActivatedRoute,
+              private bandsService: BandsService) {
   }
 
-  assignBandsFromServiceToThisComponent() {
+  ngOnInit() {
+    this.searchButton = document.getElementById('searchButton');
+    const searchInput = document.getElementById('searchInput');
+    this.searchButton$ = Observable.fromEvent(this.searchButton, 'click');
+    let searchInput$ = Observable.fromEvent(searchInput, 'keyup');
+
+
+    //Interactive search
+    // searchInput$.subscribe( (e)=> {
+    //   console.log(e);
+    //   console.log(e.target.value);
+    //   this.searchStr = e.target.value;
+    // });
+
+    this.searchStr = this.route.snapshot.queryParams['searchQuery'];
+    this.searchButton$.subscribe((event) => {
+      setTimeout(
+        () => {
+          this.searchStr = this.route.snapshot.queryParams['searchQuery'];
+          this.assignBandsFromServiceToThisComponent(this.searchStr);
+        }, 100);
+    });
+
+    this.loadBandsInBandsService();
+  }
+
+
+  assignBandsFromServiceToThisComponent(searchStr) {
+    this.bandsCardsData = [];
     for (let i = 0; i < this.bandsService.bands.length; i++) {
-      this.bandsCardsData.push(
-        Object.assign({}, this.bandsService.bands[i])
-      );
+      if (this.bandsService.bands[i]['title'].toLowerCase()
+          .indexOf(searchStr.toLowerCase()) !== -1) {
+        this.bandsCardsData.push(
+          Object.assign({}, this.bandsService.bands[i])
+        );
+      }
     }
   }
 
@@ -39,7 +65,7 @@ export class BandsCardsListPageComponent implements OnInit {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
           .subscribe((data) => {
-              this.assignBandsFromServiceToThisComponent();
+              this.assignBandsFromServiceToThisComponent(this.searchStr);
             },
             (err) => {
               console.log('error: ', err);
@@ -49,9 +75,10 @@ export class BandsCardsListPageComponent implements OnInit {
             }
           );
       } else {
-        this.assignBandsFromServiceToThisComponent();
+        this.assignBandsFromServiceToThisComponent(this.searchStr);
       }
     }
+    this.searchButton$.next();
   }
 
 }
