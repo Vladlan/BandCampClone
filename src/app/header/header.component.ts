@@ -7,7 +7,6 @@ import {AuthService} from "../auth/auth.service";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLogIned: Boolean = false;
   constructor(public auth: AuthService) {}
 
   ngOnInit() {}

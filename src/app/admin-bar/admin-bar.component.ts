@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ThrowStmt } from "@angular/compiler";
 import { LocalStorage } from '../localstorage.service';
 import { FormControl, FormGroup } from "@angular/forms";
 
@@ -14,7 +13,7 @@ interface AdminValue {
 })
 export class AdminBarComponent implements OnInit {
   open: boolean;
-  callToAction: boolean;
+  callToAction: AdminValue;
   adminBg: AdminValue;
   lightTheme: AdminValue;
 
@@ -25,35 +24,38 @@ export class AdminBarComponent implements OnInit {
   constructor(private globalService: LocalStorage) {}
 
   ngOnInit() {
-    this.adminBg = this.globalService.adminBg;
-    this.lightTheme = this.globalService.adminTheme;
-    this.callToAction = this.globalService.callToAction;
+    this.globalService.adminBg === null ? this.adminBg = {value: "#9dc3ce"} : this.adminBg = this.globalService.adminBg;
+    this.globalService.adminTheme  === null ? this.lightTheme = {value: false} : this.lightTheme = this.globalService.adminTheme;
+    this.globalService.callToAction  === null ? this.callToAction = {value: false} : this.callToAction = this.globalService.callToAction;
 
     this.formAdminBg = new FormGroup({
       adminBg: new FormControl(this.adminBg.value)
     });
-
-    this.formCallToAction = new FormGroup({
-      callToAction: new FormControl(this.callToAction);
-    });
-
-    this.formAdminTheme = new FormGroup({
-      adminTheme: new FormControl(this.lightTheme.value);
-    });
-
     this.formAdminBg.valueChanges.subscribe(term => {
+      console.log(term);
       this.adminBg.value = term.adminBg;
       this.globalService.adminBg = this.adminBg;
       //console.log(this.adminBg);
     });
 
+
+    this.formCallToAction = new FormGroup({
+      callToAction: new FormControl(this.callToAction.value)
+    });
     this.formCallToAction.valueChanges.subscribe(term => {
+      // debugger;
       this.callToAction = term.callToAction;
       this.globalService.callToAction = this.callToAction;
       //console.log(this.callToAction);
     });
 
+
+    this.formAdminTheme = new FormGroup({
+      adminTheme: new FormControl(this.lightTheme.value)
+    });
+
     this.formAdminTheme.valueChanges.subscribe(term => {
+      console.log(term);
       this.lightTheme.value = term.adminTheme;
       this.globalService.adminTheme = this.lightTheme;
       //console.log(this.lightTheme);

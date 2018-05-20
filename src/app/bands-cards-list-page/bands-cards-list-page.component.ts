@@ -12,20 +12,19 @@ export class BandsCardsListPageComponent implements OnInit {
 
   bandsCardsData = [];
   searchStr: string;
-  inputStr: string;
-  searchButton: any;
-  searchButton$: any;
+  // inputStr: string;
+  // searchButton: any;
+  // searchButton$: any;
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
               private bandsService: BandsService) {
   }
 
   ngOnInit() {
-    this.searchButton = document.getElementById('searchButton');
-    const searchInput = document.getElementById('searchInput');
-    this.searchButton$ = Observable.fromEvent(this.searchButton, 'click');
-    let searchInput$ = Observable.fromEvent(searchInput, 'keyup');
+    // this.searchButton = document.getElementById('searchButton');
+    // const searchInput = document.getElementById('searchInput');
+    // this.searchButton$ = Observable.fromEvent(this.searchButton, 'click');
+    // let searchInput$ = Observable.fromEvent(searchInput, 'keyup');
 
 
     //Interactive search
@@ -36,10 +35,19 @@ export class BandsCardsListPageComponent implements OnInit {
     // });
 
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
-    this.searchButton$.subscribe((event) => {
+    // this.searchButton$.subscribe((event) => {
+    //   setTimeout(
+    //     () => {
+    //       this.searchStr = this.route.snapshot.queryParams['searchQuery'];
+    //       this.assignBandsFromServiceToThisComponent(this.searchStr);
+    //     }, 50);
+    // });
+
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
       setTimeout(
         () => {
-          this.searchStr = this.route.snapshot.queryParams['searchQuery'];
+          params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
           this.assignBandsFromServiceToThisComponent(this.searchStr);
         }, 100);
     });

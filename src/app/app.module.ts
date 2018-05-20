@@ -21,7 +21,7 @@ import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
 import {AuthService} from "./auth/auth.service";
 import {CallbackComponent} from "./callback/callback.component";
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
-import { HeroComponent } from './hero/hero.component';
+import { CallToActionComponent} from './call-to-action/call-to-action.component';
 import { LocalStorage } from './localstorage.service';
 
 @NgModule({
@@ -41,7 +41,7 @@ import { LocalStorage } from './localstorage.service';
     BandNameGenreYearFilter,
     CallbackComponent,
     AdminBarComponent,
-    HeroComponent
+    CallToActionComponent
   ],
   imports: [
     BrowserModule,

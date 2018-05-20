@@ -4,7 +4,9 @@
     [(ngModel)]="searchQuery"
     type="search"
     id="searchInput"
+    (keydown.enter)="goToBandsList($event)"
     placeholder="Search band by name, genre or launch year...">
+
   <a
     routerLink="/bandsList"
     [queryParams]="{ 'searchQuery' :searchQuery}"
@@ -16,6 +18,7 @@
       Search
     </button>
   </a>
+
 </div>
 <nav>
     <ul>

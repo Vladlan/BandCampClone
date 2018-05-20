@@ -6,32 +6,46 @@
 
       <form [formGroup]="formAdminBg">
         <li>
-          <input type="radio" name="adminBg" id="crust1" value="#9dc3ce" formControlName="adminBg" />
+          <input type="radio" name="adminBg" id="crust1" [value]="'#9dc3ce'" [ngModel]="adminBg.value" formControlName="adminBg" />
           <label for="crust1">Default</label>
         </li>
         <li>
-          <input type="radio" name="adminBg" id="crust2" value="red" formControlName="adminBg" />
+          <input type="radio" name="adminBg" id="crust2" [value]="'red'" [ngModel]="adminBg.value" formControlName="adminBg" />
           <label for="crust2">Red</label>
         </li>
         <li>
-          <input type="radio" name="adminBg" id="crust3" value="green" formControlName="adminBg" />
+          <input type="radio" name="adminBg" id="crust3" [value]="'green'" [ngModel]="adminBg.value" formControlName="adminBg" />
           <label for="crust3">Green</label>
         </li>
       </form>
 
+
+
       <form [formGroup]="formCallToAction">
-        <input type="checkbox" name="callToAction" id="CTA" formControlName="callToAction" />
-        <label for="CTA">Enable / Disable</label>
+        <input type="checkbox" name="callToAction" id="CTA" formControlName="callToAction"/>
+
+        <label for="CTA">Enable CTA</label>
       </form>
+
 
 
       <form [formGroup]="formAdminTheme">
         <li>
-          <input type="radio" name="adminTheme" id="adminTheme1" [value]="false" formControlName="adminTheme" />
+          <input type="radio"
+                 name="adminTheme"
+                 id="adminTheme1"
+                 [value]="true"
+                 formControlName="adminTheme"/>
           <label for="adminTheme1">Dark</label>
         </li>
+
         <li>
-          <input type="radio" name="adminTheme" id="adminTheme2" [value]="true" formControlName="adminTheme" />
+          <input type="radio"
+                 name="adminTheme"
+                 id="adminTheme2"
+                 [value]="false"
+                 formControlName="adminTheme"
+          />
           <label for="adminTheme2">Light</label>
         </li>
       </form>

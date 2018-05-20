@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -9,8 +10,22 @@ export class SearchComponent implements OnInit {
 
   @Input()
   searchQuery: String = '';
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {}
+
+  goToBandsList() {
+    this.router.navigate(['./bandsList'],
+      {
+        queryParams: {
+          searchQuery: this.searchQuery
+        }
+
+      }
+      );
+  }
 
 }
