@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<app-admin-bar *ngIf="isLogIned" ></app-admin-bar>
+<app-admin-bar *ngIf="auth.isAuthenticated()" ></app-admin-bar>
 
 <router-outlet></router-outlet>
 <!--<app-main-page></app-main-page>-->

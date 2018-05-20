@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { SlickModule } from "ngx-slick";
-import { BandsService } from "../bands.service";
+
 @Component({
   selector: "app-bands-cards-carousel",
   templateUrl: "./bands-cards-carousel.component.html",

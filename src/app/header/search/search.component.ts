@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -12,7 +12,6 @@ export class SearchComponent implements OnInit {
   searchQuery: String = '';
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {}

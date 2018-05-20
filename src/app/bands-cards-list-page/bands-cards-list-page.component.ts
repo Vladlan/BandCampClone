@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BandsService} from '../bands.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Observable} from 'rxjs/Rx';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-bands-cards-list-page',
@@ -12,36 +11,12 @@ export class BandsCardsListPageComponent implements OnInit {
 
   bandsCardsData = [];
   searchStr: string;
-  // inputStr: string;
-  // searchButton: any;
-  // searchButton$: any;
 
   constructor(private route: ActivatedRoute,
-              private bandsService: BandsService) {
-  }
+              private bandsService: BandsService) {}
 
   ngOnInit() {
-    // this.searchButton = document.getElementById('searchButton');
-    // const searchInput = document.getElementById('searchInput');
-    // this.searchButton$ = Observable.fromEvent(this.searchButton, 'click');
-    // let searchInput$ = Observable.fromEvent(searchInput, 'keyup');
-
-
-    //Interactive search
-    // searchInput$.subscribe( (e)=> {
-    //   console.log(e);
-    //   console.log(e.target.value);
-    //   this.searchStr = e.target.value;
-    // });
-
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
-    // this.searchButton$.subscribe((event) => {
-    //   setTimeout(
-    //     () => {
-    //       this.searchStr = this.route.snapshot.queryParams['searchQuery'];
-    //       this.assignBandsFromServiceToThisComponent(this.searchStr);
-    //     }, 50);
-    // });
 
     this.route.queryParams.subscribe((params) => {
       console.log(params);

@@ -35,7 +35,6 @@ export class AdminBarComponent implements OnInit {
       console.log(term);
       this.adminBg.value = term.adminBg;
       this.globalService.adminBg = this.adminBg;
-      //console.log(this.adminBg);
     });
 
 
@@ -64,6 +63,5 @@ export class AdminBarComponent implements OnInit {
 
   toogleSide() {
     this.open = !this.open;
-    //console.log(this.open);
   }
 }
