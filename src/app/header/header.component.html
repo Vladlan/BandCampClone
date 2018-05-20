@@ -17,28 +17,20 @@
           </a>
         </li>
 
-        <li *ngIf="!isLogIned">
 
-          <div class="social-megia-login-box">
-            <span>sign in:</span>
-            <a href="#" class="social-media-login-box__link">
-              <button>
-                VK
-              </button>
-            </a>
-            <a href="#" class="social-media-login-box__link">
-              <button>
-                GL
-              </button>
-            </a>
-            <a href="#" class="social-media-login-box__link">
-              <button>
-                FB
-              </button>
-            </a>
-          </div>
+          <button id="qsLoginBtn"
+                  *ngIf="!auth.isAuthenticated()"
+                  (click)="auth.login()"
+                  type="button">
+            Log In
+          </button>
 
-        </li>
+          <button id="qsLogoutBtn"
+                  *ngIf="auth.isAuthenticated()"
+                  (click)="auth.logout()"
+                  type="button">
+            Log Out
+          </button>
 
       </ul>
     </nav>

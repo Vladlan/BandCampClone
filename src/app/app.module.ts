@@ -19,6 +19,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './band-page/band-page.component';
 import { BandAlbumComponent } from './band-album/band-album.component';
 import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
+import {AuthService} from "./auth/auth.service";
+import {CallbackComponent} from "./callback/callback.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
     BandsCardsListPageComponent,
     BandPageComponent,
     BandAlbumComponent,
-    BandNameGenreYearFilter
+    BandNameGenreYearFilter,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [BandsService],
+  providers: [BandsService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
