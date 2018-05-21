@@ -1,44 +1,32 @@
-.BandPageComponent {
-  border: 1px solid green;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
-}
-
 .BandPageComponent h1 {
   color: green;
 }
 
 .BandPage_mainImg {
-  display: block;
-  width: 90%;
   height: 150px;
-  border: 1px solid gold;
-  margin: 5px auto;
   background: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(147, 190, 255));
-  text-align: center;
+}
+
+.BandPage_inner{
+  height: calc(100vh - 360px);
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 150px);
 }
 
 .BandPage_BandInformation {
-  display: inline-block;
-  width: 100%;
-  height: 600px;
-  border: 1px solid lightgray;
+  flex:1;
+  border-left: 1px solid #cfd3d4;
+  padding-left: 20px;
+  text-align: left;
 }
 
 .BandPage_AlbumsList {
   display: flex;
+  flex: 2;
   flex-wrap: wrap;
-  width: 100%;
-  height: 100%;
-  margin: 5px auto;
-  border: 1px solid grey;
-  justify-content: start;
-}
-
-.BandPage_BandInformation {
-  text-align: left;
+  justify-content: flex-start;
+  align-content: baseline;
 }
 
 .BandPage_BandInformation_Title {
@@ -59,32 +47,3 @@
   font-family: Georgia, Times, serif;
 }
 
-/* Grid */
-.column {
-  flex-basis: 100%;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.column {
-  flex: 1;
-}
-
-.column {
-  padding: 15px;
-  /*border: 1px solid #666;*/
-  margin: 5px 0;
-}
-
-._80 {
-  padding-right: 8%;
-}
-
-._20 {
-  padding-left: 8%;
-  flex: 5.0;
-}

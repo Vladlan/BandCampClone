@@ -1,53 +1,27 @@
-<div class="BandPageComponent">
-  <h1>BandPageComponent</h1>
-
-  <div class="row">
-    <div class="column">
-      <div class="BandPage_mainImg"
-           [style.background-image]="(currentBandData.imageUrl.length > 7) ?
+<div class="wrapper BandPageComponent">
+  <div class="wrapper__inner">
+    <div class="BandPage_mainImg" [style.background-image]="(currentBandData.imageUrl.length > 7) ?
            'url(' + currentBandData.imageUrl + ')' :
-           'linear-gradient(to right, rgba(255, 0, 0, 0), rgb(147, 190, 255))'"
-      >
-        <h3>Main img</h3>
+           'linear-gradient(to right, rgba(255, 0, 0, 0), rgb(147, 190, 255))'">
+    </div>
+    <div class="BandPage_inner">
+
+    <div class="BandPage_AlbumsList">
+      <app-band-album *ngFor="let bandAlbum of currentBandData['albums']; let i = index" imageUrl={{bandAlbum.imageUrl}} title="{{bandAlbum.title}}"
+        genre="{{bandAlbum.genre}}">
+      </app-band-album>
+    </div>
+    <div class="BandPage_BandInformation">
+      <div class="BandPage_BandInformation_Title">
+        <b>{{currentBandData.title}}</b>
+        <div class="BandPage_BandInformation_Year">
+          {{currentBandData.launchYear}}
+        </div>
       </div>
+      <div class="BandPage_BandInformation_Description">
+        {{currentBandData.description}}
+      </div>
+    </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="column _20">
-
-
-      <div class="BandPage_AlbumsList">
-
-        <app-band-album
-          *ngFor="let bandAlbum of currentBandData['albums']; let i = index"
-          imageUrl={{bandAlbum.imageUrl}}
-          title="{{bandAlbum.title}}"
-          genre="{{bandAlbum.genre}}"
-        ></app-band-album>
-
-      </div>
-
-
-    </div>
-    <div class="column _80">
-      <div class="BandPage_BandInformation">
-
-        <div class="BandPage_BandInformation_Title">
-          <b>{{currentBandData.title}}</b>
-          <div class="BandPage_BandInformation_Year">
-            {{currentBandData.launchYear}}
-          </div>
-        </div>
-
-
-        <div class="BandPage_BandInformation_Description">
-          {{currentBandData.description}}
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-
 </div>

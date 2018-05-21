@@ -32,7 +32,7 @@ export class AdminBarComponent implements OnInit {
       adminBg: new FormControl(this.adminBg.value)
     });
     this.formAdminBg.valueChanges.subscribe(term => {
-      console.log(term);
+      //console.log(term);
       this.adminBg.value = term.adminBg;
       this.globalService.adminBg = this.adminBg;
     });
@@ -54,7 +54,7 @@ export class AdminBarComponent implements OnInit {
     });
 
     this.formAdminTheme.valueChanges.subscribe(term => {
-      console.log(term);
+      //console.log(term);
       this.lightTheme.value = term.adminTheme;
       this.globalService.adminTheme = this.lightTheme;
       //console.log(this.lightTheme);

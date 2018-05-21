@@ -4,50 +4,53 @@
     <h1>Dashboard</h1>
     <div>
 
-      <form [formGroup]="formAdminBg">
-        <li>
+      <form class="custom-radio" [formGroup]="formAdminBg">
+        <label for="crust1"> Default
           <input type="radio" name="adminBg" id="crust1" [value]="'#9dc3ce'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          <label for="crust1">Default</label>
-        </li>
-        <li>
+          <span class="checkmark"></span>
+        </label>
+        <label for="crust2">Red
           <input type="radio" name="adminBg" id="crust2" [value]="'red'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          <label for="crust2">Red</label>
-        </li>
-        <li>
+          
+          <span class="checkmark"></span>
+        </label>
+        <label for="crust3">Green
           <input type="radio" name="adminBg" id="crust3" [value]="'green'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          <label for="crust3">Green</label>
-        </li>
+          
+          <span class="checkmark"></span>
+        </label>
       </form>
 
+      <hr/>
 
-
-      <form [formGroup]="formCallToAction">
-        <input type="checkbox" name="callToAction" id="CTA" formControlName="callToAction"/>
-
-        <label for="CTA">Enable CTA</label>
+      <form class="custom-checkbox"  [formGroup]="formCallToAction">
+        <label for="CTA">Enable CTA
+          <input type="checkbox" name="callToAction" id="CTA" formControlName="callToAction"/>
+          <span class="checkmark"></span>
+        </label>
       </form>
 
+      <hr/>
 
-
-      <form [formGroup]="formAdminTheme">
-        <li>
+      <form class="custom-radio" [formGroup]="formAdminTheme">
+        <label for="adminTheme1">Dark
           <input type="radio"
                  name="adminTheme"
                  id="adminTheme1"
                  [value]="true"
                  formControlName="adminTheme"/>
-          <label for="adminTheme1">Dark</label>
-        </li>
+          <span class="checkmark"></span>
+        </label>
 
-        <li>
+        <label for="adminTheme2" >Light
           <input type="radio"
                  name="adminTheme"
                  id="adminTheme2"
                  [value]="false"
                  formControlName="adminTheme"
           />
-          <label for="adminTheme2">Light</label>
-        </li>
+          <span class="checkmark"></span>
+        </label>
       </form>
 
 

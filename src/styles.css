@@ -1,8 +1,14 @@
-html {
-  /*height: calc(100% - 104px - 55px);*/
+html, body {
+  height: 100%;
+}
+
+.wrapper__inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 body {
   margin: 0;
-  height: 100%;
+  background-color: #eef2f3;
 }
