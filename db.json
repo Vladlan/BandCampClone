@@ -67,6 +67,41 @@
           "genre": "Electro"
         }
       ]
+    },
+
+    {
+      "id": "3",
+      "title": "band #3 Title",
+      "genre": "Techno",
+      "launchYear": "2017",
+      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
+      "description": "description of band #3",
+      "albums": [
+        {
+          "id": "b3.1",
+          "title": "title of album #1",
+          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
+          "band": "band #3 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.2",
+          "title": "title of album #2",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #3 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.3",
+          "title": "title of album #3",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #3 Title",
+          "genre": "Techno"
+        }
+      ]
     }
+
   ]
 }

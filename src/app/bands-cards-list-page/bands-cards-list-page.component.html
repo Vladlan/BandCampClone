@@ -2,7 +2,7 @@
   <h1>BandsCardsListPageComponent</h1>
   <h2>Results</h2>
   <app-band-card
-    *ngFor="let bandCard of bandsCardsData | BandNameGenreYearFilter:searchStr:'title';"
+    *ngFor="let bandCard of bandsCardsData | BandNameGenreFilter:searchStr:'title':'genre';"
     imageUrl={{bandCard.imageUrl}}
     bandUrl="/garage"
     title="{{bandCard.title}}"

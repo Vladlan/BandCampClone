@@ -8,20 +8,19 @@
 
 ul {
     padding: 0;
-    margin: 0;
     list-style: none;
     display: flex;
     align-items: center;
     margin: 15px 0 0;
   }
-  
+
   ul li {
     margin: 0 5px;
   }
 
 .search__input {
     width: calc(100% - 60px);
-    
+
 }
 
 .search__button {

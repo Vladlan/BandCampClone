@@ -9,7 +9,6 @@ export class TopBandsListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

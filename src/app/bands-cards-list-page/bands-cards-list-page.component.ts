@@ -13,7 +13,8 @@ export class BandsCardsListPageComponent implements OnInit {
   searchStr: string;
 
   constructor(private route: ActivatedRoute,
-              private bandsService: BandsService) {}
+              private bandsService: BandsService) {
+  }
 
   ngOnInit() {
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
@@ -34,8 +35,11 @@ export class BandsCardsListPageComponent implements OnInit {
   assignBandsFromServiceToThisComponent(searchStr) {
     this.bandsCardsData = [];
     for (let i = 0; i < this.bandsService.bands.length; i++) {
-      if (this.bandsService.bands[i]['title'].toLowerCase()
-          .indexOf(searchStr.toLowerCase()) !== -1) {
+      if ( this.bandsService.bands[i]['title'].toLowerCase()
+          .indexOf(searchStr.toLowerCase()) !== -1 ||
+        this.bandsService.bands[i]['genre'].toLowerCase()
+          .indexOf(searchStr.toLowerCase()) !== -1
+      ) {
         this.bandsCardsData.push(
           Object.assign({}, this.bandsService.bands[i])
         );

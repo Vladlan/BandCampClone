@@ -17,7 +17,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './band-page/band-page.component';
 import { BandAlbumComponent } from './band-album/band-album.component';
-import { BandNameGenreYearFilter } from './band-name-genre-year-pipe.pipe';
+import {BandNameGenreFilter} from './band-name-genre.pipe';
 import {AuthService} from "./auth/auth.service";
 import {CallbackComponent} from "./callback/callback.component";
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
@@ -38,7 +38,7 @@ import { LocalStorage } from './localstorage.service';
     BandsCardsListPageComponent,
     BandPageComponent,
     BandAlbumComponent,
-    BandNameGenreYearFilter,
+    BandNameGenreFilter,
     CallbackComponent,
     AdminBarComponent,
     CallToActionComponent
