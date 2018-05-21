@@ -5,6 +5,12 @@
 .search__input,
 .search__button {
   height: 30px;
+  background-color: white;
+  border: 1px solid silver;
+}
+
+.search__button:hover {
+  cursor: pointer;
 }
 
 ul {
@@ -25,6 +31,18 @@ ul li {
 
 .search__button {
   width: 60px;
+}
+
+.search_link-to-bands-list {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+}
+
+.search_link-to-bands-list:hover {
+  cursor: pointer;
+  color: #477987;
+  text-decoration: underline;
 }
 
 @media (max-width: 480px) {

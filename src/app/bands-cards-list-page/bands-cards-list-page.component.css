@@ -1,9 +1,22 @@
 .BandsCardsListPage {
-  height: 100%;
-  width: 100%;
+  height: calc(100vh - 360px);
   text-align: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .BandsCardsListPage h1, h2{
   color: crimson;
+}
+
+@media (max-width: 830px) {
+  .BandsCardsListPage {
+    height: calc(100vh - 495px);
+  }
+}
+
+@media (max-width: 580px) {
+  .BandsCardsListPage {
+    height: calc(100vh - 670px);
+  }
 }

@@ -1,6 +1,7 @@
 .footer {
   position: absolute;
   bottom: 0;
+  width: 95%;
   width: -webkit-fill-available;
   overflow: hidden;
   font-family: "Arial", "Calibri", sans-serif;

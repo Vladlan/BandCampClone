@@ -15,11 +15,11 @@
           </li>
 
 
-          <button id="qsLoginBtn" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" type="button">
+          <button id="qsLoginBtn" class="header_login-btn" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" type="button">
             Log In
           </button>
 
-          <button id="qsLogoutBtn" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" type="button">
+          <button id="qsLogoutBtn" class="header_logout-btn" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" type="button">
             Log Out
           </button>
 
