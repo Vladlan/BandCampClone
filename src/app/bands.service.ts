@@ -9,7 +9,7 @@ export class BandsService {
   bands = [];
 
   // main REST methods
-  getBands(url = 'http://localhost:3000/bands'): Observable<any> {
+  getBands(url = 'http://178.172.173.195:3000/bands'): Observable<any> {
     return this.http.get<Observable<any>>(url);
   }
 
