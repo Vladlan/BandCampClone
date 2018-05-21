@@ -1,12 +1,13 @@
 <div class="AlbumComponent">
 
-  <div class="AlbumComponent_Img"
+  <!-- <div class="AlbumComponent_Img"
        [style.background-image]="(imageUrl.length > 7) ?
            'url(' + imageUrl + ')' :
            'linear-gradient(to right, rgba(255, 0, 0, 0), rgb(147, 190, 255))'"
   >
     albumImg
-  </div>
+  </div> -->
+  <img src={{imageUrl}} class="albumImg" alt="" />
 
   <div class="AlbumComponent_Title">
     <b>{{title}}</b>
