@@ -1,8 +1,8 @@
 <div class="carousel">
   <nav class="carousel__nav">
     <div class="stepper">
-      <button (click)="slickModal.slickPrev()">←</button>
-      <button (click)="slickModal.slickNext()">→</button>
+      <button class="bands-cards-carousel_left-button" (click)="slickModal.slickPrev()"> &#8678;</button>
+      <button class="bands-cards-carousel_right-button" (click)="slickModal.slickNext()"> &#8680;</button>
     </div>
   </nav>
   <ngx-slick class="carousel_inner" #slickModal="slick-modal" [config]="slideConfig">
