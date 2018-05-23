@@ -32,7 +32,7 @@ export class BandsCardsListPageComponent implements OnInit {
   }
 
 
-  assignBandsFromServiceToThisComponent(searchStr) {
+  assignBandsFromServiceToThisComponent(searchStr = '') {
     this.bandsCardsData = [];
     for (let i = 0; i < this.bandsService.bands.length; i++) {
       if ( this.bandsService.bands[i]['title'].toLowerCase()
