@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 0;
   width: 95%;
-  width: -webkit-fill-available;
+  width: stretch;
   overflow: hidden;
   font-family: "Arial", "Calibri", sans-serif;
   background-color: #477987;
