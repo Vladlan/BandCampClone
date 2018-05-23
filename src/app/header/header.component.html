@@ -8,12 +8,6 @@
       <nav>
         <ul>
 
-          <li *ngIf="isLogIned">
-            <a routerLink="/bandsList">
-              Your profile
-            </a>
-          </li>
-
 
           <button id="qsLoginBtn" class="header_login-btn" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" type="button">
             Log In
