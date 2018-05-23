@@ -1,9 +1,9 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-bands-cards-carousel",
-  templateUrl: "./bands-cards-carousel.component.html",
-  styleUrls: ["./bands-cards-carousel.component.css"]
+  selector: 'app-bands-cards-carousel',
+  templateUrl: './bands-cards-carousel.component.html',
+  styleUrls: ['./bands-cards-carousel.component.css']
 })
 export class BandsCardsCarouselComponent {
   @Input() bands: any;

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {BandsService} from '../bands.service';
+import {BandsService} from '../services/bands.service';
 import {ActivatedRoute} from '@angular/router';
+import cloneDeep from 'lodash/cloneDeep';
+
 
 @Component({
   selector: 'app-bands-cards-list-page',
@@ -51,14 +53,11 @@ export class BandsCardsListPageComponent implements OnInit {
     if (this.bandsCardsData.length === 0) {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
+          .subscribe(() => {
               this.assignBandsFromServiceToThisComponent(this.searchStr);
             },
             (err) => {
               console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of BandsCardsListPageComponent');
             }
           );
       } else {

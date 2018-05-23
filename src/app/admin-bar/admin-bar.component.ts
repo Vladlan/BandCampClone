@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { LocalStorage } from '../localstorage.service';
-import { FormControl, FormGroup } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { LocalStorage } from '../services/localstorage.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 interface AdminValue {
   value: any;
 }
 
 @Component({
-  selector: "app-admin-bar",
-  templateUrl: "./admin-bar.component.html",
-  styleUrls: ["./admin-bar.component.css"]
+  selector: 'app-admin-bar',
+  templateUrl: './admin-bar.component.html',
+  styleUrls: ['./admin-bar.component.css']
 })
 export class AdminBarComponent implements OnInit {
   open: boolean;
@@ -24,7 +24,7 @@ export class AdminBarComponent implements OnInit {
   constructor(private globalService: LocalStorage) {}
 
   ngOnInit() {
-    this.globalService.adminBg === null ? this.adminBg = {value: "#9dc3ce"} : this.adminBg = this.globalService.adminBg;
+    this.globalService.adminBg === null ? this.adminBg = {value: '#9dc3ce'} : this.adminBg = this.globalService.adminBg;
     this.globalService.adminTheme  === null ? this.lightTheme = {value: false} : this.lightTheme = this.globalService.adminTheme;
     this.globalService.callToAction  === null ? this.callToAction = {value: false} : this.callToAction = this.globalService.callToAction;
 
@@ -32,7 +32,6 @@ export class AdminBarComponent implements OnInit {
       adminBg: new FormControl(this.adminBg.value)
     });
     this.formAdminBg.valueChanges.subscribe(term => {
-      //console.log(term);
       this.adminBg.value = term.adminBg;
       this.globalService.adminBg = this.adminBg;
     });
@@ -42,10 +41,8 @@ export class AdminBarComponent implements OnInit {
       callToAction: new FormControl(this.callToAction.value)
     });
     this.formCallToAction.valueChanges.subscribe(term => {
-      // debugger;
       this.callToAction = term.callToAction;
       this.globalService.callToAction = this.callToAction;
-      //console.log(this.callToAction);
     });
 
 
@@ -54,10 +51,8 @@ export class AdminBarComponent implements OnInit {
     });
 
     this.formAdminTheme.valueChanges.subscribe(term => {
-      //console.log(term);
       this.lightTheme.value = term.adminTheme;
       this.globalService.adminTheme = this.lightTheme;
-      //console.log(this.lightTheme);
     });
   }
 

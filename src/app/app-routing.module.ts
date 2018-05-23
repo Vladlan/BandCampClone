@@ -3,7 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {MainPageComponent} from './main-page/main-page.component';
 import {BandsCardsListPageComponent} from './bands-cards-list-page/bands-cards-list-page.component';
 import {BandPageComponent} from './band-page/band-page.component';
-import {CallbackComponent} from "./callback/callback.component";
+import {CallbackComponent} from './callback/callback.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },

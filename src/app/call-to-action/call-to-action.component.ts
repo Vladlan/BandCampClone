@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { LocalStorage } from "../localstorage.service";
+import { Component, OnInit } from '@angular/core';
+import { LocalStorage } from '../services/localstorage.service';
 
 @Component({
-  selector: "app-hero",
-  templateUrl: "./call-to-action.component.html",
-  styleUrls: ["./call-to-action.component.css"]
+  selector: 'app-call-to-action',
+  templateUrl: './call-to-action.component.html',
+  styleUrls: ['./call-to-action.component.css']
 })
 export class CallToActionComponent implements OnInit {
   show: boolean;
@@ -15,10 +15,10 @@ export class CallToActionComponent implements OnInit {
     this.globalService.callToActionSubject.subscribe(
       item => {
         console.log(item);
-        return this.show = !!item
+        return this.show = !!item;
       }
     );
 
-    JSON.parse(localStorage.getItem("callToAction")) === null ? this.show = false : this.show = JSON.parse(localStorage.getItem("callToAction")).value;
+    JSON.parse(localStorage.getItem('callToAction')) === null ? this.show = false : this.show = JSON.parse(localStorage.getItem('callToAction')).value;
   }
 }
