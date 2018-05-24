@@ -1,0 +1,24 @@
+<a class="band-card" routerLink="/band/{{band.title}}">
+
+  <div class="band-card__content-wrapper">
+    <div class="band-card__image">
+      <img [src]="band.imageUrl" alt="cover" />
+      <span class="view-btn">
+        view
+      </span>
+    </div>
+
+    <div class="band-card__title">
+      {{band.title}}
+    </div>
+
+    <p class="band-card__genre">
+      {{band.genre}}
+    </p>
+
+    <p class="band-card__description">
+      {{band.description}}
+    </p>
+  </div>
+
+</a>

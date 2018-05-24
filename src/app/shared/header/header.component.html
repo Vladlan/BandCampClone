@@ -1,0 +1,37 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a routerLink="/">
+        <img src="https://s4.bcbits.com/img/homepage_2015/bc-logo@2x.png" alt="" class="logo" width="156px" height="25px">
+      </a>
+      <h1>BandCampClone</h1>
+      <nav>
+        <ul>
+          <button id="qsLoginBtn" class="header_login-btn" *ngIf="!auth.isAuthenticated()" (click)="auth.login()" type="button">
+            Log In
+          </button>
+
+          <button id="qsLogoutBtn" class="header_logout-btn" *ngIf="auth.isAuthenticated()" (click)="auth.logout()" type="button">
+            Log Out
+          </button>
+        </ul>
+      </nav>
+    </div>
+    <div class="search">
+      <input class="search__input" [(ngModel)]="searchQuery" type="search" id="searchInput" (keydown.enter)="goToBandsList($event)"
+        placeholder="name, genre...">
+      <a routerLink="/list" (click)="goToBandsList($event)">
+        <button id="searchButton" class="search__button">
+          Search
+        </button>
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/list" class="search_link-to-bands-list">Bands cards list</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

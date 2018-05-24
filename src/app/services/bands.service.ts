@@ -1,43 +1,21 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ApiService } from './api.service';
+import { map } from 'rxjs/operators/map';
+import { Band } from 'app/models';
 @Injectable()
 export class BandsService {
-  constructor(private http: HttpClient) {}
+  private bands: Observable<Array<Band>>;
+  constructor(private apiService: ApiService) {}
 
-  bands = [];
-
-  // main REST methods
-  getBands(url = 'http://localhost:3000/bands'): Observable<any> {
-    return this.http.get<Observable<any>>(url);
+  getAll(): Observable<Array<Band>> {
+    return !this.bands
+      ? (this.bands = this.apiService.get('/').pipe(map(data => data.bands)))
+      : this.bands;
   }
 
-  assignBandsToService() {
-
-    const ourBandsObservable = Observable.create((observer) =>  {
-      this.getBands()
-        .subscribe((bands: any) => {
-            for (let i = 0; i < bands.length; i++) {
-              this.bands.push(Object.assign({}, bands[i]));
-            }
-            observer.next(this.bands);
-          },
-          (err) => {
-            console.log('error: ', err);
-          },
-          () => {
-            console.log('completed');
-            return this.bands;
-          }
-        );
-    });
-
-    return ourBandsObservable;
+  getBandById(id: number): Observable<Array<Band>> {
+    return this.apiService.get('/').pipe(map(data => data.bands));
   }
-
-  consoleLogFromBandsService() {
-    console.log(this.bands);
-  }
-
 }

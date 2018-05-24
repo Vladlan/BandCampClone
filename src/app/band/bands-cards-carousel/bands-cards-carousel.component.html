@@ -1,0 +1,12 @@
+<div class="carousel">
+  <nav class="carousel__nav">
+    <div class="stepper">
+      <button class="bands-cards-carousel_left-button" (click)="slickModal.slickPrev()"> &#8678;</button>
+      <button class="bands-cards-carousel_right-button" (click)="slickModal.slickNext()"> &#8680;</button>
+    </div>
+  </nav>
+  <ngx-slick class="carousel_inner" #slickModal="slick-modal" [config]="slideConfig">
+    <app-band-card ngxSlickItem class="slide" *ngFor="let band of bands; let i = index" [band]="band">
+    </app-band-card>
+  </ngx-slick>
+</div>
