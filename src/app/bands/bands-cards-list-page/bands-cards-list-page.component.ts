@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BandsService} from '../services/bands.service';
+import {BandsService} from '../../services/bands.service';
 import {ActivatedRoute} from '@angular/router';
 import cloneDeep from 'lodash/cloneDeep';
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BandsService} from '../services/bands.service';
+import {BandsService} from '../../services/bands.service';
 
 export interface Album {
   id: string;
