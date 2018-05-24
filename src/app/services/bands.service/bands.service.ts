@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import cloneDeep from 'lodash/cloneDeep';
+
 
 @Injectable()
 export class BandsService {
@@ -9,7 +11,8 @@ export class BandsService {
   bands = [];
 
   // main REST methods
-  getBands(url = 'http://localhost:3000/bands'): Observable<any> {
+  getBands(): Observable<any> {
+    const url = 'http://localhost:3000/bands';
     return this.http.get<Observable<any>>(url);
   }
 
@@ -18,9 +21,7 @@ export class BandsService {
     const ourBandsObservable = Observable.create((observer) =>  {
       this.getBands()
         .subscribe((bands: any) => {
-            for (let i = 0; i < bands.length; i++) {
-              this.bands.push(Object.assign({}, bands[i]));
-            }
+            this.bands = cloneDeep(bands);
             observer.next(this.bands);
           },
           (err) => {

@@ -32,24 +32,28 @@ export class BandsCardsListPageComponent implements OnInit {
     this.loadBandsInBandsService();
   }
 
+  //item ==> this.bandsService.bands[i]
+  checkSearchCondition(searchStr, item) {
+    return item['title'].toLowerCase()
+        .indexOf(searchStr.toLowerCase()) !== -1 ||
+      item['genre'].toLowerCase()
+        .indexOf(searchStr.toLowerCase()) !== -1;
+  }
 
   assignBandsFromServiceToThisComponent(searchStr = '') {
     this.bandsCardsData = [];
-    for (let i = 0; i < this.bandsService.bands.length; i++) {
-      if ( this.bandsService.bands[i]['title'].toLowerCase()
-          .indexOf(searchStr.toLowerCase()) !== -1 ||
-        this.bandsService.bands[i]['genre'].toLowerCase()
-          .indexOf(searchStr.toLowerCase()) !== -1
-      ) {
-        this.bandsCardsData.push(
-          Object.assign({}, this.bandsService.bands[i])
-        );
+
+    // item ==> this.bandsService.bands[i]
+    this.bandsService.bands.forEach( (item, i ) => {
+      if ( this.checkSearchCondition(searchStr , item) ) {
+        this.bandsCardsData.push( cloneDeep( item ) );
       }
-    }
+    });
   }
 
   loadBandsInBandsService() {
     if (this.bandsCardsData.length === 0) {
+
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
           .subscribe(() => {
@@ -62,6 +66,8 @@ export class BandsCardsListPageComponent implements OnInit {
       } else {
         this.assignBandsFromServiceToThisComponent(this.searchStr);
       }
+
+
     }
   }
 

@@ -9,15 +9,17 @@ import { LocalStorage } from '../services/localstorage.service/localstorage.serv
 export class CallToActionComponent implements OnInit {
   show: boolean;
 
-  constructor(private globalService: LocalStorage) {}
+  constructor(private localStorageService: LocalStorage) {}
 
   ngOnInit() {
-    this.globalService.callToActionSubject.subscribe(
+    this.localStorageService.callToActionSubject.subscribe(
       item => {
         return this.show = !!item;
       }
     );
 
-    JSON.parse(localStorage.getItem('callToAction')) === null ? this.show = false : this.show = JSON.parse(localStorage.getItem('callToAction')).value;
+    this.localStorageService.callToAction === null ?
+      this.show = false :
+      this.show = this.localStorageService.callToAction.value;
   }
 }
