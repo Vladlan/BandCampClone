@@ -40,6 +40,11 @@ a {
   flex: 1;
 }
 
+.header__logo-img {
+  width: 156px;
+  height: 25px;
+}
+
 .header__search {
   display: flex;
   flex-direction: column;

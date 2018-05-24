@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BandsService} from '../services/bands.service';
+import {BandsService} from '../services/bands.service/bands.service';
 
 @Component({
   selector: 'app-main-page',
@@ -14,7 +14,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.loadBandsInBandsService();
-    console.log(this.bandsCardsData);
   }
 
   assignBandsFromServiceToThisComponent() {
@@ -27,14 +26,11 @@ export class MainPageComponent implements OnInit {
     if (this.bandsCardsData.length === 0) {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
+          .subscribe(() => {
               this.assignBandsFromServiceToThisComponent();
             },
             (err) => {
               console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of mainpage');
             }
           );
       } else {

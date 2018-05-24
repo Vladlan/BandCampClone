@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BandsService} from '../../services/bands.service';
+import {BandsService} from '../../services/bands.service/bands.service';
 
 export interface Album {
   id: string;
@@ -54,14 +54,11 @@ export class BandPageComponent implements OnInit {
     if (this.currentBandData === undefined) {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
+          .subscribe(() => {
               this.getCurrentBandDataFromService();
             },
             (err) => {
               console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of BandPageComponent');
             }
           );
       } else {

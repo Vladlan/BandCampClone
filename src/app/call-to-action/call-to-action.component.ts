@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorage } from '../services/localstorage.service';
+import { LocalStorage } from '../services/localstorage.service/localstorage.service';
 
 @Component({
   selector: 'app-call-to-action',
@@ -14,7 +14,6 @@ export class CallToActionComponent implements OnInit {
   ngOnInit() {
     this.globalService.callToActionSubject.subscribe(
       item => {
-        console.log(item);
         return this.show = !!item;
       }
     );

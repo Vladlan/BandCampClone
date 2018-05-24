@@ -27,7 +27,6 @@ export class BandsService {
             console.log('error: ', err);
           },
           () => {
-            console.log('completed');
             return this.bands;
           }
         );
@@ -35,9 +34,4 @@ export class BandsService {
 
     return ourBandsObservable;
   }
-
-  consoleLogFromBandsService() {
-    console.log(this.bands);
-  }
-
 }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BandsService} from '../../services/bands.service';
+import {BandsService} from '../../services/bands.service/bands.service';
 import {ActivatedRoute} from '@angular/router';
 import cloneDeep from 'lodash/cloneDeep';
 
@@ -22,7 +22,6 @@ export class BandsCardsListPageComponent implements OnInit {
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
 
     this.route.queryParams.subscribe((params) => {
-      console.log(params);
       setTimeout(
         () => {
           params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
