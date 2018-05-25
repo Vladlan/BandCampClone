@@ -22,11 +22,8 @@ export class BandsCardsListPageComponent implements OnInit {
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
 
     this.route.queryParams.subscribe((params) => {
-      setTimeout(
-        () => {
-          params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
+      params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
           this.assignBandsFromServiceToThisComponent(this.searchStr);
-        }, 100);
     });
 
     this.loadBandsInBandsService();
