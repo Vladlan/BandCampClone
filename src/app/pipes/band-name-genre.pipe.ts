@@ -11,19 +11,12 @@ export class BandNameGenreFilter implements PipeTransform {
       return bandsCardsData;
     }
 
-    return bandsCardsData.filter((bandCard) => {
-        if (bandCard[key1]
+    return bandsCardsData.filter((bandCard) => bandCard[key1]
           .toLowerCase()
           .indexOf(searchStr.toLowerCase()) !== -1 ||
           bandCard[key2]
             .toLowerCase()
             .indexOf(searchStr.toLowerCase()) !== -1
-        ) {
-          return true
-        } else {return false}
-      }
     );
   }
-
-
 }
