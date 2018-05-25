@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
-import { shareReplay, map, refCount } from 'rxjs/operators';
+import { shareReplay, map, first, filter, flatMap } from 'rxjs/operators';
 import { Band } from 'app/models';
 @Injectable()
 export class BandsService {
@@ -19,7 +19,15 @@ export class BandsService {
           .pipe(shareReplay(1)));
   }
 
-  getBandById(id: number): Observable<Array<Band>> {
-    return this.apiService.get('/').pipe(map(data => data.bands));
+  getBandById(id: number): Observable<Band> {
+    return this.getAll()
+      .pipe(flatMap(bands => bands))
+      .pipe(first(band => +band.id === id));
+  }
+
+  getBandByName(name: string): Observable<Band> {
+    return this.getAll()
+      .pipe(flatMap(bands => bands))
+      .pipe(first(band => band.title.toLowerCase() === name));
   }
 }
