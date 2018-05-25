@@ -21,19 +21,34 @@ export class AdminBarComponent implements OnInit {
   formCallToAction: FormGroup;
   formAdminTheme: FormGroup;
 
-  constructor(private globalService: LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    this.globalService.adminBg === null ? this.adminBg = {value: '#9dc3ce'} : this.adminBg = this.globalService.adminBg;
-    this.globalService.adminTheme  === null ? this.lightTheme = {value: false} : this.lightTheme = this.globalService.adminTheme;
-    this.globalService.callToAction  === null ? this.callToAction = {value: false} : this.callToAction = this.globalService.callToAction;
+    if ( this.localStorageService.adminBg === null ) {
+      this.adminBg = {value: '#9dc3ce'}
+    } else {
+      this.adminBg = this.localStorageService.adminBg
+    }
+
+    if ( this.localStorageService.adminTheme === null ) {
+      this.lightTheme = {value: false}
+    } else {
+      this.lightTheme = this.localStorageService.adminTheme
+    }
+
+    if ( this.localStorageService.callToAction === null ) {
+      this.callToAction = {value: false}
+    } else {
+      this.callToAction = this.localStorageService.callToAction
+    }
+
 
     this.formAdminBg = new FormGroup({
       adminBg: new FormControl(this.adminBg.value)
     });
     this.formAdminBg.valueChanges.subscribe(term => {
       this.adminBg.value = term.adminBg;
-      this.globalService.adminBg = this.adminBg;
+      this.localStorageService.adminBg = this.adminBg;
     });
 
 
@@ -42,7 +57,7 @@ export class AdminBarComponent implements OnInit {
     });
     this.formCallToAction.valueChanges.subscribe(term => {
       this.callToAction = term.callToAction;
-      this.globalService.callToAction = this.callToAction;
+      this.localStorageService.callToAction = this.callToAction;
     });
 
 
@@ -52,7 +67,7 @@ export class AdminBarComponent implements OnInit {
 
     this.formAdminTheme.valueChanges.subscribe(term => {
       this.lightTheme.value = term.adminTheme;
-      this.globalService.adminTheme = this.lightTheme;
+      this.localStorageService.adminTheme = this.lightTheme;
     });
   }
 
