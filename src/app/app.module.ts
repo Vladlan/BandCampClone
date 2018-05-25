@@ -21,7 +21,7 @@ import {AuthService} from './services/auth.service/auth.service';
 import {CallbackComponent} from './callback/callback.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
 import { CallToActionComponent} from './call-to-action/call-to-action.component';
-import { LocalStorage } from './services/localstorage.service/localstorage.service';
+import { LocalStorageService } from './services/localstorage.service/localstorage.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { LocalStorage } from './services/localstorage.service/localstorage.servi
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [BandsService, AuthService, LocalStorage ],
+  providers: [BandsService, AuthService, LocalStorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

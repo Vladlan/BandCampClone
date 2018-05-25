@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorage } from '../services/localstorage.service/localstorage.service';
+import { LocalStorageService } from '../services/localstorage.service/localstorage.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
 interface AdminValue {
@@ -21,7 +21,7 @@ export class AdminBarComponent implements OnInit {
   formCallToAction: FormGroup;
   formAdminTheme: FormGroup;
 
-  constructor(private globalService: LocalStorage) {}
+  constructor(private globalService: LocalStorageService) {}
 
   ngOnInit() {
     this.globalService.adminBg === null ? this.adminBg = {value: '#9dc3ce'} : this.adminBg = this.globalService.adminBg;

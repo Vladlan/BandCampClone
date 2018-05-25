@@ -6,10 +6,19 @@ interface AdminValue {
 }
 
 @Injectable()
-export class LocalStorage {
+export class LocalStorageService {
   callToActionSubject = new Subject();
   adminThemeSubject = new Subject();
   adminBgSubject = new Subject();
+
+  setItem(token:string, value: any):void {
+    typeof value === 'string' ? value : JSON.stringify(value);
+    localStorage.setItem(token, value);
+  }
+
+  removeItem(token:string):void {
+    localStorage.removeItem(token);
+  }
 
   set adminBg(value: AdminValue) {
     // debugger;

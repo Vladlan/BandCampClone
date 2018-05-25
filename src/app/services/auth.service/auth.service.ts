@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AUTH_CONFIG } from './auth0-variables';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
+import { LocalStorageService} from "../localstorage.service/localstorage.service";
 
 @Injectable()
 export class AuthService {
@@ -15,7 +16,7 @@ export class AuthService {
     scope: 'openid'
   });
 
-  constructor(public router: Router) {}
+  constructor(public router: Router, public localStorageService: LocalStorageService) {}
 
   public login(): void {
     this.auth0.authorize();
@@ -37,16 +38,17 @@ export class AuthService {
   private setSession(authResult): void {
     // Set the time that the access token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
+
+    this.localStorageService.setItem('access_token', authResult.accessToken);
+    this.localStorageService.setItem('id_token', authResult.idToken);
+    this.localStorageService.setItem('expires_at', expiresAt);
   }
 
   public logout(): void {
     // Remove tokens and expiry time from localStorage
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('expires_at');
+    this.localStorageService.removeItem('access_token');
+    this.localStorageService.removeItem('id_token');
+    this.localStorageService.removeItem('expires_at');
     // Go back to the home route
     this.router.navigate(['/']);
   }

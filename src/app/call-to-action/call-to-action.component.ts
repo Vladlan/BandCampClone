@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorage } from '../services/localstorage.service/localstorage.service';
+import { LocalStorageService } from '../services/localstorage.service/localstorage.service';
 
 @Component({
   selector: 'app-call-to-action',
@@ -9,7 +9,7 @@ import { LocalStorage } from '../services/localstorage.service/localstorage.serv
 export class CallToActionComponent implements OnInit {
   show: boolean;
 
-  constructor(private localStorageService: LocalStorage) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
     this.localStorageService.callToActionSubject.subscribe(
