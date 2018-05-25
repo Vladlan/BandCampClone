@@ -21,6 +21,24 @@ export class AdminBarComponent implements OnInit {
   formCallToAction: FormGroup;
   formAdminTheme: FormGroup;
 
+  adminBgData = [
+    {
+      content: 'Default',
+      value: '#9dc3ce',
+      id: 'crust1'
+    },
+    {
+      content: 'Red',
+      value: 'red',
+      id: 'crust2'
+    },
+    {
+      content: 'Green',
+      value: 'green',
+      id: 'crust3'
+    }
+  ];
+
   constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {

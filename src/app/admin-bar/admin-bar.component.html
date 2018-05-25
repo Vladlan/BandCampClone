@@ -4,21 +4,12 @@
     <h1>Dashboard</h1>
     <div>
 
-      <form class="custom-radio" [formGroup]="formAdminBg">
-        <label for="crust1"> Default
-          <input type="radio" name="adminBg" id="crust1" [value]="'#9dc3ce'" [ngModel]="adminBg.value" formControlName="adminBg" />
+      <form class="custom-radio" [formGroup]="formAdminBg" *ngFor="let oneRadioBtnData of adminBgData">
+        <label for={{oneRadioBtnData.id}}>{{oneRadioBtnData.content}}
+          <input type="radio" name="adminBg" id={{oneRadioBtnData.id}} [value]="oneRadioBtnData.value" [ngModel]="adminBg.value" formControlName="adminBg" />
           <span class="checkmark"></span>
         </label>
-        <label for="crust2">Red
-          <input type="radio" name="adminBg" id="crust2" [value]="'red'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          
-          <span class="checkmark"></span>
-        </label>
-        <label for="crust3">Green
-          <input type="radio" name="adminBg" id="crust3" [value]="'green'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          
-          <span class="checkmark"></span>
-        </label>
+
       </form>
 
       <hr/>

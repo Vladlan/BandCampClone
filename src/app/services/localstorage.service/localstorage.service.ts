@@ -21,7 +21,6 @@ export class LocalStorageService {
   }
 
   set adminBg(value: AdminValue) {
-    // debugger;
     localStorage.setItem('adminBg', JSON.stringify({value: value.value} ) );
     this.adminBgSubject.next(value.value); // this will make sure to tell every subscriber about the change.
   }
@@ -31,13 +30,11 @@ export class LocalStorageService {
   }
 
   set adminTheme(theme: AdminValue) {
-    // debugger;
     localStorage.setItem('lightTheme', JSON.stringify({value: theme.value}));
     this.adminThemeSubject.next(theme.value); // this will make sure to tell every subscriber about the change.
   }
 
   get adminTheme() {
-    // debugger;
     return JSON.parse(localStorage.getItem('lightTheme'));
   }
 
