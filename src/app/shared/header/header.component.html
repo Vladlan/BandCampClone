@@ -20,11 +20,9 @@
     <div class="search">
       <input class="search__input" [(ngModel)]="searchQuery" type="search" id="searchInput" (keydown.enter)="goToBandsList($event)"
         placeholder="name, genre...">
-      <a routerLink="/list" (click)="goToBandsList($event)">
-        <button id="searchButton" class="search__button">
+        <button id="searchButton" (click)="goToBandsList($event)" class="search__button">
           Search
         </button>
-      </a>
     </div>
     <nav>
       <ul>

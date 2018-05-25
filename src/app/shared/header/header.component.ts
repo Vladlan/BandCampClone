@@ -13,7 +13,7 @@ export class HeaderComponent {
   constructor(public auth: AuthService, private router: Router) {}
 
   goToBandsList() {
-    this.router.navigate(['./bandsList'], {
+    this.router.navigate(['./list'], {
       queryParams: {
         q: this.searchQuery
       }
