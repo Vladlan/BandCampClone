@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BandsService } from '../../services/bands.service';
+import { BandsService } from 'app/services';
+import { Band } from 'app/models';
 
 @Component({
   selector: 'app-band-page',
@@ -8,8 +9,8 @@ import { BandsService } from '../../services/bands.service';
   styleUrls: ['./band-page.component.css']
 })
 export class BandPageComponent implements OnInit {
-  bands: Array<string> = [];
-  bandsLoaded = false;
+  band: Band;
+  bandLoaded = false;
 
   constructor(
     private router: Router,
@@ -18,23 +19,11 @@ export class BandPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
-    this.bandsService.getBandById(id).subscribe(bands => {
-      this.bands = bands;
-      this.bandsLoaded = true;
-      console.log(this.bands);
+    const name = this.route.snapshot.params['name'].toLowerCase();
+    console.log(name);
+    this.bandsService.getBandByName(name).subscribe(band => {
+      this.band = band;
+      this.bandLoaded = true;
     });
-  }
-
-  getCurrentBandDataFromService() {
-    this.currentBandTitle = this.route.snapshot.params['name'];
-    for (let i = 0; i < this.bandsService.bands.length; i++) {
-      if (
-        this.bandsService.bands[i]['title'].toLowerCase() ===
-        this.currentBandTitle.toLowerCase()
-      ) {
-        this.currentBandData = Object.assign({}, this.bandsService.bands[i]);
-      }
-    }
   }
 }
