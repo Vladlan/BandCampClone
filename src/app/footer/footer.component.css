@@ -1,6 +1,4 @@
 .footer {
-  position: absolute;
-  bottom: 0;
   width: 95%;
   width: stretch;
   overflow: hidden;
@@ -23,7 +21,7 @@ a:hover {
 .footer ul {
   padding: 0;
   margin: 0;
-  width: 250px;
+  width: 200px;
   padding-top: 50px;
   list-style: none;
 }

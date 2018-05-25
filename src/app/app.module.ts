@@ -16,7 +16,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import { BandPageComponent } from './bands/band-page/band-page.component';
 import { BandAlbumComponent } from './bands/band-album/band-album.component';
-import {BandNameGenreFilter} from './pipes/band-name-genre.pipe';
+import {BandNameGenreFilterPipe} from './pipes/band-name-genre.pipe';
 import {AuthService} from './services/auth.service/auth.service';
 import {CallbackComponent} from './callback/callback.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
@@ -36,7 +36,7 @@ import { LocalStorageService } from './services/localstorage.service/localstorag
     BandsCardsListPageComponent,
     BandPageComponent,
     BandAlbumComponent,
-    BandNameGenreFilter,
+    BandNameGenreFilterPipe,
     CallbackComponent,
     AdminBarComponent,
     CallToActionComponent
@@ -47,9 +47,9 @@ import { LocalStorageService } from './services/localstorage.service/localstorag
     ReactiveFormsModule,
     SlickModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [BandsService, AuthService, LocalStorageService ],
+  providers: [BandsService, AuthService, LocalStorageService, BandNameGenreFilterPipe ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,8 @@
+<div class="mainWrapper">
 <app-header></app-header>
 
 <app-admin-bar *ngIf="auth.isAuthenticated()" ></app-admin-bar>
 
 <router-outlet></router-outlet>
-
+</div>
 <app-footer></app-footer>

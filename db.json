@@ -99,12 +99,44 @@
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #3 Title",
           "genre": "Techno"
+        },
+
+        {
+          "id": "b3.4",
+          "title": "title of album #4",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #4 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.5",
+          "title": "title of album #5",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #5 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.6",
+          "title": "title of album #6",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #6 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.7",
+          "title": "title of album #7",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #7 Title",
+          "genre": "Techno"
         }
       ]
     },
 
     {
-      "id": "3",
+      "id": "4",
       "title": "band #3 Title",
       "genre": "Techno",
       "launchYear": "2017",
@@ -133,13 +165,44 @@
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #3 Title",
           "genre": "Techno"
+        },
+
+        {
+          "id": "b3.4",
+          "title": "title of album #4",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #4 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.5",
+          "title": "title of album #5",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #5 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.6",
+          "title": "title of album #6",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #6 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.7",
+          "title": "title of album #7",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #7 Title",
+          "genre": "Techno"
         }
       ]
-    }
-  ,
+    },
 
     {
-      "id": "3",
+      "id": "5",
       "title": "band #3 Title",
       "genre": "Techno",
       "launchYear": "2017",
@@ -168,13 +231,44 @@
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #3 Title",
           "genre": "Techno"
+        },
+
+        {
+          "id": "b3.4",
+          "title": "title of album #4",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #4 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.5",
+          "title": "title of album #5",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #5 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.6",
+          "title": "title of album #6",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #6 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.7",
+          "title": "title of album #7",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #7 Title",
+          "genre": "Techno"
         }
       ]
-    }
-  ,
+    },
 
     {
-      "id": "3",
+      "id": "6",
       "title": "band #3 Title",
       "genre": "Techno",
       "launchYear": "2017",
@@ -203,13 +297,44 @@
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #3 Title",
           "genre": "Techno"
+        },
+
+        {
+          "id": "b3.4",
+          "title": "title of album #4",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #4 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.5",
+          "title": "title of album #5",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #5 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.6",
+          "title": "title of album #6",
+          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
+          "band": "band #6 Title",
+          "genre": "Techno"
+        },
+
+        {
+          "id": "b3.7",
+          "title": "title of album #7",
+          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
+          "band": "band #7 Title",
+          "genre": "Techno"
         }
       ]
-    }
-  ,
+    },
 
     {
-      "id": "3",
+      "id": "7",
       "title": "band #3 Title",
       "genre": "Techno",
       "launchYear": "2017",
@@ -238,395 +363,41 @@
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
           "band": "band #3 Title",
           "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
         },
 
         {
-          "id": "b3.2",
-          "title": "title of album #2",
+          "id": "b3.4",
+          "title": "title of album #4",
           "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
+          "band": "band #4 Title",
           "genre": "Techno"
         },
 
         {
-          "id": "b3.3",
-          "title": "title of album #3",
+          "id": "b3.5",
+          "title": "title of album #5",
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
+          "band": "band #5 Title",
           "genre": "Techno"
         },
 
         {
-          "id": "b3.2",
-          "title": "title of album #2",
+          "id": "b3.6",
+          "title": "title of album #6",
           "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
+          "band": "band #6 Title",
           "genre": "Techno"
         },
 
         {
-          "id": "b3.3",
-          "title": "title of album #3",
+          "id": "b3.7",
+          "title": "title of album #7",
           "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
+          "band": "band #7 Title",
           "genre": "Techno"
         }
       ]
     }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-  ,
-
-    {
-      "id": "3",
-      "title": "band #3 Title",
-      "genre": "Techno",
-      "launchYear": "2017",
-      "imageUrl": "https://f4.bcbits.com/img/a2831811125_13.jpg",
-      "description": "description of band #3",
-      "albums": [
-        {
-          "id": "b3.1",
-          "title": "title of album #1",
-          "imageUrl": "https://f4.bcbits.com/img/a0666976019_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.2",
-          "title": "title of album #2",
-          "imageUrl": "https://f4.bcbits.com/img/a1792250493_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        },
-
-        {
-          "id": "b3.3",
-          "title": "title of album #3",
-          "imageUrl": "https://f4.bcbits.com/img/a3840260975_2.jpg",
-          "band": "band #3 Title",
-          "genre": "Techno"
-        }
-      ]
-    }
-
 
   ]
 }

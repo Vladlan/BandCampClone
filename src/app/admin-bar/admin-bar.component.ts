@@ -43,21 +43,21 @@ export class AdminBarComponent implements OnInit {
 
   ngOnInit() {
     if ( this.localStorageService.adminBg === null ) {
-      this.adminBg = {value: '#9dc3ce'}
+      this.adminBg = {value: '#9dc3ce'};
     } else {
-      this.adminBg = this.localStorageService.adminBg
+      this.adminBg = this.localStorageService.adminBg;
     }
 
     if ( this.localStorageService.adminTheme === null ) {
-      this.lightTheme = {value: false}
+      this.lightTheme = {value: false};
     } else {
-      this.lightTheme = this.localStorageService.adminTheme
+      this.lightTheme = this.localStorageService.adminTheme;
     }
 
     if ( this.localStorageService.callToAction === null ) {
-      this.callToAction = {value: false}
+      this.callToAction = {value: false};
     } else {
-      this.callToAction = this.localStorageService.callToAction
+      this.callToAction = this.localStorageService.callToAction;
     }
 
 

@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'BandNameGenreFilter'
 })
-export class BandNameGenreFilter implements PipeTransform {
+export class BandNameGenreFilterPipe implements PipeTransform {
 
   transform(bandsCardsData, searchStr: string, key1: string, key2: string) {
 
