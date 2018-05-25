@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {BandsService} from '../../services/bands.service/bands.service';
+import {BandsService} from '../services/bands.service/bands.service';
 import {ActivatedRoute} from '@angular/router';
-import {BandNameGenreFilterPipe} from '../../pipes/band-name-genre.pipe';
+import {BandNameGenreFilterPipe} from '../pipes/band-name-genre.pipe';
 
 
 @Component({
