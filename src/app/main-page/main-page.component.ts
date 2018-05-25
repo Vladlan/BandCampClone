@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BandsService} from '../services/bands.service/bands.service';
 import cloneDeep from 'lodash/cloneDeep';
+import {BandNameGenreFilterPipe} from "../pipes/band-name-genre.pipe";
 
 @Component({
   selector: 'app-main-page',
@@ -11,29 +12,21 @@ export class MainPageComponent implements OnInit {
 
   bandsCardsData = [];
 
-  constructor(private bandsService: BandsService) {}
+  constructor(private bandsService: BandsService,
+              private bandNameGenreFilter: BandNameGenreFilterPipe) {}
 
   ngOnInit() {
     this.loadBandsInBandsService();
   }
 
-  //item ==> this.bandsService.bands[i]
-  checkSearchCondition(searchStr, item) {
-    return item['title'].toLowerCase()
-        .indexOf(searchStr.toLowerCase()) !== -1 ||
-      item['genre'].toLowerCase()
-        .indexOf(searchStr.toLowerCase()) !== -1;
-  }
-
   assignBandsFromServiceToThisComponent(searchStr = '') {
     this.bandsCardsData = [];
 
-    // item ==> this.bandsService.bands[i]
-    this.bandsService.bands.forEach( (item, i ) => {
-      if ( this.checkSearchCondition(searchStr , item) ) {
-        this.bandsCardsData.push( cloneDeep( item ) );
-      }
-    });
+    this.bandsCardsData = this.bandNameGenreFilter.transform(
+      this.bandsService.bands,
+      searchStr,
+      'title',
+      'genre');
   }
 
   loadBandsInBandsService() {

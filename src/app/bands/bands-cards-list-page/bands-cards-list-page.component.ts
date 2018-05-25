@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BandsService} from '../../services/bands.service/bands.service';
 import {ActivatedRoute} from '@angular/router';
-import cloneDeep from 'lodash/cloneDeep';
+import {BandNameGenreFilterPipe} from '../../pipes/band-name-genre.pipe';
 
 
 @Component({
@@ -15,7 +15,9 @@ export class BandsCardsListPageComponent implements OnInit {
   searchStr: string;
 
   constructor(private route: ActivatedRoute,
-              private bandsService: BandsService) {
+              private bandsService: BandsService,
+              private bandNameGenreFilter: BandNameGenreFilterPipe
+              ) {
   }
 
   ngOnInit() {
@@ -29,23 +31,14 @@ export class BandsCardsListPageComponent implements OnInit {
     this.loadBandsInBandsService();
   }
 
-  //item ==> this.bandsService.bands[i]
-  checkSearchCondition(searchStr, item) {
-    return item['title'].toLowerCase()
-        .indexOf(searchStr.toLowerCase()) !== -1 ||
-      item['genre'].toLowerCase()
-        .indexOf(searchStr.toLowerCase()) !== -1;
-  }
-
   assignBandsFromServiceToThisComponent(searchStr = '') {
     this.bandsCardsData = [];
 
-    // item ==> this.bandsService.bands[i]
-    this.bandsService.bands.forEach( (item, i ) => {
-      if ( this.checkSearchCondition(searchStr , item) ) {
-        this.bandsCardsData.push( cloneDeep( item ) );
-      }
-    });
+    this.bandsCardsData = this.bandNameGenreFilter.transform(
+      this.bandsService.bands,
+      searchStr,
+      'title',
+      'genre');
   }
 
   loadBandsInBandsService() {
