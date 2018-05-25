@@ -29,7 +29,7 @@ export class BandsCardsListPageComponent implements OnInit {
 
       this.route.queryParams.subscribe(params => {
         console.log(params);
-        this.bands = this.bandNameGenreFilter.transform(this.bands, params.q);
+        this.bands = this.bandNameGenreFilter.transform(bands, params.q);
       });
     });
   }
