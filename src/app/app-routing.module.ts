@@ -7,11 +7,15 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomeModule'
   },
   {
-    path: 'bands',
-    loadChildren: './band/band.module#BandsModule'
+    path: 'list',
+    loadChildren: './band/band.module#BandModule'
   },
   {
-    path: 'auth',
+    path: 'band',
+    loadChildren: './band/band.module#BandModule'
+  },
+  {
+    path: 'callback',
     loadChildren: './auth/auth.module#AuthModule'
   },
   { path: '**', redirectTo: '' }
