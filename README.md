@@ -1,5 +1,6 @@
 # BandCampClone
 
+At first run `npm install`.
 
 ## Development server
 

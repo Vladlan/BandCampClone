@@ -1,14 +1,19 @@
 .AlbumComponent {
+  padding: 1em 0 0 0.5em;
+  flex: 1 0 20em;
+
+  width: 200px;
+  height: 220px;
   max-width: 200px;
-  max-height: 250px;
+  max-height: 220px;
   margin: 5px;
+  overflow: hidden;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
   border-radius: 4px;
-  background-color: white;
-}
 
-.albumImg{
-  width: 100%;
+  background-color: white;
+  text-align: center;
+
 }
 
 .AlbumComponent:hover {
@@ -22,9 +27,7 @@
 }
 
 .AlbumComponent_Title {
-  margin: 0 auto;
-  text-align: center;
-  font-family: monospace;
-  font-size: 9pt;
-  padding: 10px 0;
+  width: 180px;
+  font-size: 18px;
+  font-family: Georgia, Times, serif;
 }

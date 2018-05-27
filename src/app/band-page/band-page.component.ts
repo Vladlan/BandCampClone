@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {BandsService} from '../bands.service';
+import {BandsService} from '../services/bands.service/bands.service';
+import {BandNameGenreFilterPipe} from '../pipes/band-name-genre.pipe';
 
 export interface Album {
   id: string;
@@ -31,7 +32,8 @@ export class BandPageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private bandsService: BandsService
+    private bandsService: BandsService,
+    private bandNameGenreFilter: BandNameGenreFilterPipe
   ) {}
 
   currentBandData: BandData;
@@ -43,10 +45,13 @@ export class BandPageComponent implements OnInit {
 
   getCurrentBandDataFromService() {
     this.currentBandTitle = this.route.snapshot.params['name'];
-    for (let i = 0; i < this.bandsService.bands.length; i++) {
-      if (this.bandsService.bands[i]['title'].toLowerCase() === this.currentBandTitle.toLowerCase()) {
-        this.currentBandData = Object.assign({}, this.bandsService.bands[i]);
-      }
+
+    if (this.bandsService.bands.length > 0 ) {
+      this.currentBandData = this.bandNameGenreFilter.transform(
+        this.bandsService.bands,
+        this.currentBandTitle,
+        'title',
+        'title')[0];
     }
   }
 
@@ -54,15 +59,9 @@ export class BandPageComponent implements OnInit {
     if (this.currentBandData === undefined) {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
-              this.getCurrentBandDataFromService();
-            },
-            (err) => {
-              console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of BandPageComponent');
-            }
+          .subscribe(
+            () => { this.getCurrentBandDataFromService(); },
+            (err) => { console.log('error: ', err); }
           );
       } else {
         this.getCurrentBandDataFromService();

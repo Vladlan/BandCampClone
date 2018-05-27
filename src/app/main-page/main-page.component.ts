@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {BandsService} from '../bands.service';
+import {BandsService} from '../services/bands.service/bands.service';
+import cloneDeep from 'lodash/cloneDeep';
+import {BandNameGenreFilterPipe} from "../pipes/band-name-genre.pipe";
 
 @Component({
   selector: 'app-main-page',
@@ -10,31 +12,30 @@ export class MainPageComponent implements OnInit {
 
   bandsCardsData = [];
 
-  constructor(private bandsService: BandsService) {}
+  constructor(private bandsService: BandsService,
+              private bandNameGenreFilter: BandNameGenreFilterPipe) {}
 
   ngOnInit() {
     this.loadBandsInBandsService();
-    console.log(this.bandsCardsData);
   }
 
-  assignBandsFromServiceToThisComponent() {
-    for (let i = 0; i < this.bandsService.bands.length; i++) {
-      this.bandsCardsData.push(Object.assign({}, this.bandsService.bands[i]));
-    }
+  assignBandsFromServiceToThisComponent(searchStr = '') {
+    this.bandsCardsData = [];
+
+    this.bandsCardsData = this.bandNameGenreFilter.transform(
+      this.bandsService.bands,
+      searchStr,
+      'title',
+      'genre');
   }
 
   loadBandsInBandsService() {
     if (this.bandsCardsData.length === 0) {
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
-              this.assignBandsFromServiceToThisComponent();
-            },
-            (err) => {
-              console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of mainpage');
+          .subscribe(
+            () => { this.assignBandsFromServiceToThisComponent(); },
+            (err) => { console.log('error: ', err);
             }
           );
       } else {

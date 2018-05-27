@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {BandsService} from '../bands.service';
+import {BandsService} from '../services/bands.service/bands.service';
 import {ActivatedRoute} from '@angular/router';
+import {BandNameGenreFilterPipe} from '../pipes/band-name-genre.pipe';
+
 
 @Component({
   selector: 'app-bands-cards-list-page',
@@ -13,57 +15,49 @@ export class BandsCardsListPageComponent implements OnInit {
   searchStr: string;
 
   constructor(private route: ActivatedRoute,
-              private bandsService: BandsService) {
+              private bandsService: BandsService,
+              private bandNameGenreFilter: BandNameGenreFilterPipe
+              ) {
   }
 
   ngOnInit() {
     this.searchStr = this.route.snapshot.queryParams['searchQuery'];
 
     this.route.queryParams.subscribe((params) => {
-      console.log(params);
-      setTimeout(
-        () => {
-          params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
+      params.searchQuery === undefined ? this.searchStr = '' : this.searchStr = params.searchQuery;
           this.assignBandsFromServiceToThisComponent(this.searchStr);
-        }, 100);
     });
 
     this.loadBandsInBandsService();
   }
 
-
-  assignBandsFromServiceToThisComponent(searchStr) {
+  assignBandsFromServiceToThisComponent(searchStr = '') {
     this.bandsCardsData = [];
-    for (let i = 0; i < this.bandsService.bands.length; i++) {
-      if ( this.bandsService.bands[i]['title'].toLowerCase()
-          .indexOf(searchStr.toLowerCase()) !== -1 ||
-        this.bandsService.bands[i]['genre'].toLowerCase()
-          .indexOf(searchStr.toLowerCase()) !== -1
-      ) {
-        this.bandsCardsData.push(
-          Object.assign({}, this.bandsService.bands[i])
-        );
-      }
-    }
+
+    this.bandsCardsData = this.bandNameGenreFilter.transform(
+      this.bandsService.bands,
+      searchStr,
+      'title',
+      'genre');
   }
 
   loadBandsInBandsService() {
     if (this.bandsCardsData.length === 0) {
+
       if (this.bandsService.bands.length === 0) {
         this.bandsService.assignBandsToService()
-          .subscribe((data) => {
+          .subscribe(() => {
               this.assignBandsFromServiceToThisComponent(this.searchStr);
             },
             (err) => {
               console.log('error: ', err);
-            },
-            () => {
-              console.log('completed in ngOnInit of BandsCardsListPageComponent');
             }
           );
       } else {
         this.assignBandsFromServiceToThisComponent(this.searchStr);
       }
+
+
     }
   }
 

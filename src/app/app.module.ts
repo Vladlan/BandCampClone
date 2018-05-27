@@ -1,57 +1,51 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SlickModule } from 'ngx-slick';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { TopBandsListComponent } from './top-bands-list/top-bands-list.component';
-import { BandsListItemComponent } from './bands-list-item/bands-list-item.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BandCardComponent } from './band-card/band-card.component';
-import { BandsCardsCarouselComponent } from './bands-cards-carousel/bands-cards-carousel.component';
-import { SearchComponent } from './header/search/search.component';
 import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards-list-page.component';
-import {BandsService} from './bands.service';
-import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from './app-routing.module';
-import { BandPageComponent } from './band-page/band-page.component';
-import { BandAlbumComponent } from './band-album/band-album.component';
-import {BandNameGenreFilter} from './band-name-genre.pipe';
-import {AuthService} from "./auth/auth.service";
-import {CallbackComponent} from "./callback/callback.component";
+import { CallbackComponent } from './callback/callback.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
-import { CallToActionComponent} from './call-to-action/call-to-action.component';
-import { LocalStorage } from './localstorage.service';
+import { FooterComponent } from './footer/footer.component';
+
+import { AuthService, LocalStorageService, BandsService } from './services';
+import { BandNameGenreFilterPipe } from './pipes/band-name-genre.pipe';
+
+import { HeaderModule } from './header/header.module';
+import { BandPageModule } from './band-page/band-page.module';
+import { BandCardModule } from "./shared/band-card/band-card.module";
+import { MainPageModule } from "./main-page/main-page.module";
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
-    TopBandsListComponent,
-    BandsListItemComponent,
-    HeaderComponent,
     FooterComponent,
-    BandCardComponent,
-    BandsCardsCarouselComponent,
-    SearchComponent,
     BandsCardsListPageComponent,
-    BandPageComponent,
-    BandAlbumComponent,
-    BandNameGenreFilter,
+    BandNameGenreFilterPipe,
     CallbackComponent,
-    AdminBarComponent,
-    CallToActionComponent
+    AdminBarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    SlickModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HeaderModule,
+    BandPageModule,
+    BandCardModule,
+    MainPageModule
   ],
-  providers: [BandsService, AuthService, LocalStorage],
+  providers: [
+    BandsService,
+    AuthService,
+    LocalStorageService,
+    BandNameGenreFilterPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

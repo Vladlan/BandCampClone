@@ -1,15 +1,15 @@
-import { Component, OnInit } from "@angular/core";
-import { LocalStorage } from '../localstorage.service';
-import { FormControl, FormGroup } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from '../services/localstorage.service/localstorage.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 interface AdminValue {
   value: any;
 }
 
 @Component({
-  selector: "app-admin-bar",
-  templateUrl: "./admin-bar.component.html",
-  styleUrls: ["./admin-bar.component.css"]
+  selector: 'app-admin-bar',
+  templateUrl: './admin-bar.component.html',
+  styleUrls: ['./admin-bar.component.css']
 })
 export class AdminBarComponent implements OnInit {
   open: boolean;
@@ -21,20 +21,52 @@ export class AdminBarComponent implements OnInit {
   formCallToAction: FormGroup;
   formAdminTheme: FormGroup;
 
-  constructor(private globalService: LocalStorage) {}
+  adminBgData = [
+    {
+      content: 'Default',
+      value: '#9dc3ce',
+      id: 'crust1'
+    },
+    {
+      content: 'Red',
+      value: 'red',
+      id: 'crust2'
+    },
+    {
+      content: 'Green',
+      value: 'green',
+      id: 'crust3'
+    }
+  ];
+
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
-    this.globalService.adminBg === null ? this.adminBg = {value: "#9dc3ce"} : this.adminBg = this.globalService.adminBg;
-    this.globalService.adminTheme  === null ? this.lightTheme = {value: false} : this.lightTheme = this.globalService.adminTheme;
-    this.globalService.callToAction  === null ? this.callToAction = {value: false} : this.callToAction = this.globalService.callToAction;
+    if ( this.localStorageService.adminBg === null ) {
+      this.adminBg = {value: '#9dc3ce'};
+    } else {
+      this.adminBg = this.localStorageService.adminBg;
+    }
+
+    if ( this.localStorageService.adminTheme === null ) {
+      this.lightTheme = {value: false};
+    } else {
+      this.lightTheme = this.localStorageService.adminTheme;
+    }
+
+    if ( this.localStorageService.callToAction === null ) {
+      this.callToAction = {value: false};
+    } else {
+      this.callToAction = this.localStorageService.callToAction;
+    }
+
 
     this.formAdminBg = new FormGroup({
       adminBg: new FormControl(this.adminBg.value)
     });
     this.formAdminBg.valueChanges.subscribe(term => {
-      //console.log(term);
       this.adminBg.value = term.adminBg;
-      this.globalService.adminBg = this.adminBg;
+      this.localStorageService.adminBg = this.adminBg;
     });
 
 
@@ -42,10 +74,8 @@ export class AdminBarComponent implements OnInit {
       callToAction: new FormControl(this.callToAction.value)
     });
     this.formCallToAction.valueChanges.subscribe(term => {
-      // debugger;
       this.callToAction = term.callToAction;
-      this.globalService.callToAction = this.callToAction;
-      //console.log(this.callToAction);
+      this.localStorageService.callToAction = this.callToAction;
     });
 
 
@@ -54,10 +84,8 @@ export class AdminBarComponent implements OnInit {
     });
 
     this.formAdminTheme.valueChanges.subscribe(term => {
-      //console.log(term);
       this.lightTheme.value = term.adminTheme;
-      this.globalService.adminTheme = this.lightTheme;
-      //console.log(this.lightTheme);
+      this.localStorageService.adminTheme = this.lightTheme;
     });
   }
 
