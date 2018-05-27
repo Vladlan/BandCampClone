@@ -5,7 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {HeaderComponent} from './header.component';
 import {SearchComponent} from './search/search.component';
-import {HeaderRoutingModule} from './header-routing.module';
+import {AppRoutingModule} from "../app-routing.module";
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import {HeaderRoutingModule} from './header-routing.module';
     FormsModule,
     BrowserModule,
     ReactiveFormsModule,
-    HeaderRoutingModule
+    AppRoutingModule
   ],
   providers: [],
 exports: [ HeaderComponent ]

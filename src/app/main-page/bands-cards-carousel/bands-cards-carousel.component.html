@@ -5,10 +5,17 @@
       <button class="bands-cards-carousel_right-button" (click)="slickModal.slickNext()"> &#8680;</button>
     </div>
   </nav>
-  <ngx-slick class="carousel_inner" #slickModal="slick-modal" [config]="slideConfig">
-    <app-band-card ngxSlickItem class="slide" *ngFor="let band of bands; let i = index" imageUrl={{band.imageUrl}}
-      bandUrl={{band.imageUrl}} title={{band.title}} description={{band.description}}
-      genre={{band.genre}}>
+  <ngx-slick class="carousel_inner"
+             #slickModal="slick-modal"
+             [config]="slideConfig">
+    <app-band-card ngxSlickItem
+                   class="slide"
+                   *ngFor="let band of bands;"
+                   imageUrl={{band.imageUrl}}
+                   bandUrl={{band.imageUrl}}
+                   title={{band.title}}
+                   description={{band.description}}
+                   genre={{band.genre}}>
     </app-band-card>
   </ngx-slick>
 </div>

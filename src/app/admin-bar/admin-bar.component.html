@@ -5,8 +5,14 @@
     <div>
 
       <form class="custom-radio" [formGroup]="formAdminBg" *ngFor="let oneRadioBtnData of adminBgData">
-        <label for={{oneRadioBtnData.id}}>{{oneRadioBtnData.content}}
-          <input type="radio" name="adminBg" id={{oneRadioBtnData.id}} [value]="oneRadioBtnData.value" [ngModel]="adminBg.value" formControlName="adminBg" />
+        <label for={{oneRadioBtnData.id}}>
+          {{oneRadioBtnData.content}}
+          <input type="radio"
+                 name="adminBg"
+                 id={{oneRadioBtnData.id}}
+                 [value]="oneRadioBtnData.value"
+                 [ngModel]="adminBg.value"
+                 formControlName="adminBg" />
           <span class="checkmark"></span>
         </label>
 
