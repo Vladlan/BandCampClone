@@ -27,10 +27,12 @@ export class BandsCardsListPageComponent implements OnInit {
       this.bandsLoaded = true;
       console.log(this.bands);
 
-      this.route.queryParams.subscribe(params => {
-        console.log(params);
-        this.bands = this.bandNameGenreFilter.transform(bands, params.q);
-      });
+      this.route.queryParams.subscribe(
+        params =>
+          !Object.keys(params).length
+            ? this.bands
+            : (this.bands = this.bandNameGenreFilter.transform(bands, params.q))
+      );
     });
   }
 }

@@ -21,15 +21,6 @@ const routes: Routes = [
   { path: '**', redirectTo: '' }
 ];
 
-// const appRoutes: Routes = [
-//   { path: '', component: MainPageComponent },
-//   { path: 'bandsList/', component: BandsCardsListPageComponent },
-//   { path: 'bandsList', component: BandsCardsListPageComponent },
-//   { path: 'band/:name', component: BandPageComponent },
-//   { path: 'callback', component: CallbackComponent },
-//   { path: '**', redirectTo: '' }
-// ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

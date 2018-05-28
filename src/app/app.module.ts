@@ -18,11 +18,7 @@ import { BandNameGenreFilterPipe } from './pipes';
 
 @NgModule({
   declarations: [AppComponent, AdminBarComponent],
-  imports: [
-    BrowserModule,
-    SharedModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, SharedModule, AppRoutingModule],
   providers: [
     ApiService,
     BandsService,

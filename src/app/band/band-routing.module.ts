@@ -4,8 +4,8 @@ import { BandPageComponent } from './band-page/band-page.component';
 import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards-list-page.component';
 
 const routes: Routes = [
-  { path: 'list', component: BandsCardsListPageComponent },
-  { path: 'band/:name', component: BandPageComponent }
+  { path: '', component: BandsCardsListPageComponent },
+  { path: ':name', component: BandPageComponent }
 ];
 
 @NgModule({

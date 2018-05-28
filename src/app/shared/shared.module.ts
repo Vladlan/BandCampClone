@@ -6,6 +6,9 @@ import { HeroComponent } from './hero/hero.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BandsCardsCarouselComponent } from 'app/band';
+import { BandCardComponent } from '../band/band-card/band-card.component';
+import { SlickModule } from 'ngx-slick';
 
 @NgModule({
   imports: [
@@ -13,9 +16,16 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SlickModule
   ],
-  declarations: [HeaderComponent, FooterComponent, HeroComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    HeroComponent,
+    BandsCardsCarouselComponent,
+    BandCardComponent
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
@@ -24,7 +34,10 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    SlickModule,
+    BandsCardsCarouselComponent,
+    BandCardComponent
   ]
 })
 export class SharedModule {}
