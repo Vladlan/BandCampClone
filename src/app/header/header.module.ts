@@ -5,7 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {HeaderComponent} from './header.component';
 import {SearchComponent} from './search/search.component';
-import {AppRoutingModule} from "../app-routing.module";
+import {AppRoutingModule} from '../app-routing.module';
 
 
 @NgModule({

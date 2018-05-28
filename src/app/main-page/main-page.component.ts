@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {BandsService} from '../services/bands.service/bands.service';
 import cloneDeep from 'lodash/cloneDeep';
-import {BandNameGenreFilterPipe} from "../pipes/band-name-genre.pipe";
+import {BandNameGenreFilterPipe} from '../pipes/band-name-genre.pipe';
+import {BandsService} from '../services';
 
 @Component({
   selector: 'app-main-page',

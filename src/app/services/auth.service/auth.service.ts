@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AUTH_CONFIG } from './auth0-variables';
 import { Router } from '@angular/router';
 import * as auth0 from 'auth0-js';
-import { LocalStorageService} from "../localstorage.service/localstorage.service";
+import {LocalStorageService} from '..';
 
 @Injectable()
 export class AuthService {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from '../services/localstorage.service/localstorage.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import {LocalStorageService} from '../services';
 
 interface AdminValue {
   value: any;
