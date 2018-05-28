@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BandsCardsListPageComponent } from './bands-cards-list-page/bands-cards-list-page.component';
 import { CallbackComponent } from './callback/callback.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -15,8 +14,9 @@ import { BandNameGenreFilterPipe } from './pipes/band-name-genre.pipe';
 
 import { HeaderModule } from './header/header.module';
 import { BandPageModule } from './band-page/band-page.module';
-import { BandCardModule } from "./shared/band-card/band-card.module";
-import { MainPageModule } from "./main-page/main-page.module";
+import { BandCardModule } from './shared/band-card/band-card.module';
+import { MainPageModule } from './main-page/main-page.module';
+import {BandsCardsListPageModule} from './bands-cards-list-page/bands-cards-list-page.module';
 
 
 
@@ -24,8 +24,6 @@ import { MainPageModule } from "./main-page/main-page.module";
   declarations: [
     AppComponent,
     FooterComponent,
-    BandsCardsListPageComponent,
-    BandNameGenreFilterPipe,
     CallbackComponent,
     AdminBarComponent
   ],
@@ -38,7 +36,8 @@ import { MainPageModule } from "./main-page/main-page.module";
     HeaderModule,
     BandPageModule,
     BandCardModule,
-    MainPageModule
+    MainPageModule,
+    BandsCardsListPageModule
   ],
   providers: [
     BandsService,
