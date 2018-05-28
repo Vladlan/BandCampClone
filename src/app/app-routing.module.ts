@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MainPageComponent} from './main-page/main-page.component';
-import {CallbackComponent} from './callback/callback.component';
+import {CallbackComponent} from './shared/callback/callback.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },

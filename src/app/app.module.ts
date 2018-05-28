@@ -5,16 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AdminBarComponent } from './admin-bar/admin-bar.component';
-import { FooterComponent } from './footer/footer.component';
+import { AdminBarComponent } from './shared/admin-bar/admin-bar.component';
 
 import { AuthService, LocalStorageService, BandsService } from './services';
 import { BandNameGenreFilterPipe } from './pipes/band-name-genre.pipe';
 
-import { HeaderModule } from './header/header.module';
+import { HeaderModule } from './shared/header/header.module';
 import { BandCardModule } from './shared/band-card/band-card.module';
 import { MainPageModule } from './main-page/main-page.module';
-import {CallbackModule} from './callback/callback.module';
+import { FooterComponent } from './shared/footer/footer.component';
+import { CallbackModule } from './shared/callback/callback.module';
 
 
 
