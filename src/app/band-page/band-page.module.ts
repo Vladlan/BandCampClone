@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {BandPageComponent} from './band-page.component';
 import {BandAlbumComponent} from './band-album/band-album.component';
-import {AppRoutingModule} from '../app-routing.module';
+import {BandPageRoutingModule} from './band-page-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import {AppRoutingModule} from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    BandPageRoutingModule
   ],
   providers: [],
 

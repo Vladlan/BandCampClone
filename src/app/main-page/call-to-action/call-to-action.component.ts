@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from '../../services/localstorage.service/localstorage.service';
+import {LocalStorageService} from '../../services';
 
 @Component({
   selector: 'app-call-to-action',
