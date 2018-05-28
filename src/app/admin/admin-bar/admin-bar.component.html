@@ -1,58 +1,36 @@
-<aside class="admin" [style.background-color]="adminBg.value"  [ngClass]="{'open': open}">
+<aside class="admin"   [ngClass]="{'open': open}">
   <div class="icon" (click)="toogleSide()" [ngClass]="open ? 'arrow-right' : 'arrow-left'"></div>
-  <div class="admin__inner" [ngClass]="lightTheme.value ? 'light' : 'dark'">
+  <div class="admin__inner" >
     <h1>Dashboard</h1>
     <div>
-
-      <form class="custom-radio" [formGroup]="formAdminBg">
-        <label for="crust1"> Default
-          <input type="radio" name="adminBg" id="crust1" [value]="'#9dc3ce'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          <span class="checkmark"></span>
-        </label>
-        <label for="crust2">Red
-          <input type="radio" name="adminBg" id="crust2" [value]="'red'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          
-          <span class="checkmark"></span>
-        </label>
-        <label for="crust3">Green
-          <input type="radio" name="adminBg" id="crust3" [value]="'green'" [ngModel]="adminBg.value" formControlName="adminBg" />
-          
-          <span class="checkmark"></span>
-        </label>
-      </form>
+      <select (change)="setAdminBg($event.target.value)" >
+        <option 
+        *ngFor="let color of adminBgColors" 
+        [value]="color.key" 
+        [attr.selected]="color.key==adminBg.key ? true : null">
+        {{color.value}}
+        </option>
+      </select>
 
       <hr/>
 
-      <form class="custom-checkbox"  [formGroup]="formCallToAction">
+      <div class="custom-checkbox" >
         <label for="CTA">Enable CTA
-          <input type="checkbox" name="callToAction" id="CTA" formControlName="callToAction"/>
+          <input type="checkbox" name="callToAction" id="CTA" (change)="toogleCallToAction($event.target.checked)" [checked]="callToAction"/>
           <span class="checkmark"></span>
         </label>
-      </form>
+      </div>
 
       <hr/>
 
-      <form class="custom-radio" [formGroup]="formAdminTheme">
-        <label for="adminTheme1">Dark
-          <input type="radio"
-                 name="adminTheme"
-                 id="adminTheme1"
-                 [value]="true"
-                 formControlName="adminTheme"/>
-          <span class="checkmark"></span>
-        </label>
-
-        <label for="adminTheme2" >Light
-          <input type="radio"
-                 name="adminTheme"
-                 id="adminTheme2"
-                 [value]="false"
-                 formControlName="adminTheme"
-          />
-          <span class="checkmark"></span>
-        </label>
-      </form>
-
+      <select (change)="setAdminTheme($event.target.value)" >
+        <option 
+        *ngFor="let theme of adminThemes" 
+        [value]="theme.key" 
+        [attr.selected]="theme.key==adminTheme.key ? true : null">
+        {{theme.value}}
+        </option>
+      </select>
 
 
     </div>
