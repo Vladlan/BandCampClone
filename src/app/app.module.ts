@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CallbackComponent } from './callback/callback.component';
 import { AdminBarComponent } from './admin-bar/admin-bar.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -17,6 +16,7 @@ import { BandPageModule } from './band-page/band-page.module';
 import { BandCardModule } from './shared/band-card/band-card.module';
 import { MainPageModule } from './main-page/main-page.module';
 import {BandsCardsListPageModule} from './bands-cards-list-page/bands-cards-list-page.module';
+import {CallbackModule} from './callback/callback.module';
 
 
 
@@ -24,7 +24,6 @@ import {BandsCardsListPageModule} from './bands-cards-list-page/bands-cards-list
   declarations: [
     AppComponent,
     FooterComponent,
-    CallbackComponent,
     AdminBarComponent
   ],
   imports: [
@@ -37,6 +36,7 @@ import {BandsCardsListPageModule} from './bands-cards-list-page/bands-cards-list
     BandPageModule,
     BandCardModule,
     MainPageModule,
+    CallbackModule,
     BandsCardsListPageModule
   ],
   providers: [

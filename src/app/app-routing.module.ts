@@ -7,7 +7,6 @@ import {CallbackComponent} from './callback/callback.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'bandsList/', component: BandsCardsListPageComponent },
   { path: 'bandsList', component: BandsCardsListPageComponent },
   { path: 'band/:name', component: BandPageComponent },
   { path: 'callback', component: CallbackComponent },
@@ -15,7 +14,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [RouterModule.forRoot(appRoutes, { enableTracing: false })],
   exports: [RouterModule]
 })
 
