@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.badge img{
+  width: 100%;
+}
+
 .badge__container {
   display: inline-block;
   vertical-align: middle;
