@@ -7,7 +7,6 @@ import {SlickModule} from 'ngx-slick';
 import {BandCardModule} from '../shared/band-card/band-card.module';
 import {MainPageRoutingModule} from './main-page-routing.module';
 import {BandsCardsListPageModule} from '../bands-cards-list-page/bands-cards-list-page.module';
-import {BandPageModule} from '../band-page/band-page.module';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import {BandPageModule} from '../band-page/band-page.module';
     SlickModule.forRoot(),
     BandCardModule,
     BandsCardsListPageModule,
-    BandPageModule,
     MainPageRoutingModule
   ],
   providers: [],

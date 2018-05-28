@@ -8,7 +8,7 @@ import {AppRoutingModule} from '../app-routing.module';
   declarations: [
     CallbackComponent
   ],
-  exports: [],
+  exports: [CallbackComponent],
   imports: [
     CommonModule,
     AppRoutingModule

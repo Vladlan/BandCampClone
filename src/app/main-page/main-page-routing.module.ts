@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {MainPageComponent} from './main-page.component';
-import {BandsCardsListPageComponent} from '../bands-cards-list-page/bands-cards-list-page.component';
 
 const mainPageRoutes: Routes = [
-  { path: '', component: MainPageComponent }
+  { path: '', component: MainPageComponent },
+  { path: 'band/:name', loadChildren: 'src/app/band-page/band-page.module#BandPageModule' }
 ];
 
 @NgModule({
