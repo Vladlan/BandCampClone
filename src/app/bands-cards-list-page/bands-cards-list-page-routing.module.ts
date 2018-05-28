@@ -4,7 +4,7 @@ import {BandsCardsListPageComponent} from './bands-cards-list-page.component';
 
 const bandsCardsListPageRoutes: Routes = [
   {
-    path: 'bandsList',
+    path: '',
     component: BandsCardsListPageComponent
   },
 ];

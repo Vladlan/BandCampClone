@@ -6,7 +6,6 @@ import {BandsCardsCarouselComponent} from './bands-cards-carousel/bands-cards-ca
 import {SlickModule} from 'ngx-slick';
 import {BandCardModule} from '../shared/band-card/band-card.module';
 import {MainPageRoutingModule} from './main-page-routing.module';
-import {BandsCardsListPageModule} from '../bands-cards-list-page/bands-cards-list-page.module';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import {BandsCardsListPageModule} from '../bands-cards-list-page/bands-cards-lis
     CommonModule,
     SlickModule.forRoot(),
     BandCardModule,
-    BandsCardsListPageModule,
     MainPageRoutingModule
   ],
   providers: [],

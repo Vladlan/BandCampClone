@@ -10,4 +10,4 @@ const mainPageRoutes: Routes = [
   exports: [RouterModule]
 })
 
-export class MainPageRoutingModule {}
+export class BandCardRoutingModule {}

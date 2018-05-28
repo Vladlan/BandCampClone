@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {BandCardComponent} from "./band-card.component";
-import {AppRoutingModule} from "../../app-routing.module";
+import {BandCardComponent} from './band-card.component';
+import {BandCardRoutingModule} from './band-card-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,7 @@ import {AppRoutingModule} from "../../app-routing.module";
   exports: [BandCardComponent],
   imports: [
     CommonModule,
-    AppRoutingModule
+    BandCardRoutingModule
   ],
   providers: [],
 
