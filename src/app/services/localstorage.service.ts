@@ -1,43 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-
-interface AdminValue {
-  value: boolean;
-}
-
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { LocalStorage } from '@ngx-pwa/local-storage';
+import { subscribeOn } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Injectable()
 export class LocalStorageService {
-  callToActionSubject = new Subject();
-  adminThemeSubject = new Subject();
-  adminBgSubject = new Subject();
+  public storageStream = {};
 
-  set adminBg(value: AdminValue) {
-    // debugger;
-    localStorage.setItem('adminBg', JSON.stringify({ value: value.value }));
-    this.adminBgSubject.next(value.value); // this will make sure to tell every subscriber about the change.
+  public constructor(protected localStorage: LocalStorage) {}
+
+  public setItem(key: string, value: any): BehaviorSubject<any> {
+    localStorage.setItem(key, JSON.stringify(value));
+
+    if (!this.storageStream.hasOwnProperty(key)) {
+      this.storageStream[key] = new BehaviorSubject(value);
+    }
+
+    this.storageStream[key].next(value);
+    return this.storageStream[key];
   }
 
-  get adminBg() {
-    return JSON.parse(localStorage.getItem('adminBg'));
-  }
-
-  set adminTheme(theme: AdminValue) {
-    // debugger;
-    localStorage.setItem('lightTheme', JSON.stringify({ value: theme.value }));
-    this.adminThemeSubject.next(theme.value); // this will make sure to tell every subscriber about the change.
-  }
-
-  get adminTheme() {
-    // debugger;
-    return JSON.parse(localStorage.getItem('lightTheme'));
-  }
-
-  set callToAction(value: AdminValue) {
-    localStorage.setItem('callToAction', JSON.stringify({ value: value }));
-    this.callToActionSubject.next(value); // this will make sure to tell every subscriber about the change.
-  }
-
-  get callToAction() {
-    return JSON.parse(localStorage.getItem('callToAction'));
+  public getItem(key: string): BehaviorSubject<any> {
+    const value = JSON.parse(localStorage.getItem(key));
+    return value !== null ? this.setItem(key, value) : null;
   }
 }
