@@ -8,7 +8,12 @@ export class LocalStorageService {
   public storageStream = {};
 
   public constructor(protected localStorage: LocalStorage) {}
-
+  /**
+   * Set item into localStorage and return BehaviorSubject
+   * @param  {string} key
+   * @param  {any} value
+   * @returns BehaviorSubject
+   */
   public setItem(key: string, value: any): BehaviorSubject<any> {
     localStorage.setItem(key, JSON.stringify(value));
 
@@ -19,9 +24,16 @@ export class LocalStorageService {
     this.storageStream[key].next(value);
     return this.storageStream[key];
   }
-
-  public getItem(key: string): BehaviorSubject<any> {
+  /**
+   * Get item from localStorage or set it by default value and return BehaviorSubject
+   * @param  {string} key
+   * @param  {any} defaultValue?
+   * @returns BehaviorSubject
+   */
+  public getItem(key: string, defaultValue?: any): BehaviorSubject<any> {
     const value = JSON.parse(localStorage.getItem(key));
-    return value !== null ? this.setItem(key, value) : null;
+    return value !== null
+      ? this.setItem(key, value)
+      : this.setItem(key, defaultValue);
   }
 }

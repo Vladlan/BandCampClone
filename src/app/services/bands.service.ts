@@ -8,26 +8,37 @@ import { Band } from 'app/models';
 export class BandsService {
   private bands: Observable<Array<Band>>;
   constructor(private apiService: ApiService) {}
-
+  /**
+   * Get all bands
+   * @returns Observable
+   */
   getAll(): Observable<Array<Band>> {
-    console.log(this.bands);
     return !!this.bands
       ? this.bands
       : (this.bands = this.apiService
           .get('/')
-          .pipe(map(data => data.bands))
-          .pipe(shareReplay(1)));
+          .pipe(map(data => data.bands), shareReplay(1)));
   }
-
+  /**
+   * Get band by id
+   * @param  {number} id
+   * @returns Observable
+   */
   getBandById(id: number): Observable<Band> {
-    return this.getAll()
-      .pipe(flatMap(bands => bands))
-      .pipe(first(band => +band.id === id));
+    return this.getAll().pipe(
+      flatMap(bands => bands),
+      first(band => +band.id === id)
+    );
   }
-
+  /**
+   * Get band by name
+   * @param  {string} name
+   * @returns Observable
+   */
   getBandByName(name: string): Observable<Band> {
-    return this.getAll()
-      .pipe(flatMap(bands => bands))
-      .pipe(first(band => band.title.toLowerCase() === name));
+    return this.getAll().pipe(
+      flatMap(bands => bands),
+      first(band => band.title.toLowerCase() === name)
+    );
   }
 }
