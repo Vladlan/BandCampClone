@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Band } from 'app/models';
 
 @Component({
   selector: 'app-bands-cards-carousel',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./bands-cards-carousel.component.css']
 })
 export class BandsCardsCarouselComponent {
-  @Input() bands: Array<string> = [];
+  @Input() bands: Array<Band> = [];
 
   slideConfig = {
     slidesToShow: 4,

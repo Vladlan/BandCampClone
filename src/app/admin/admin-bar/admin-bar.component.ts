@@ -1,7 +1,6 @@
 import { Component, OnInit, COMPILER_OPTIONS } from '@angular/core';
 import { LocalStorageService } from 'app/services';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs/Subject';
 
 interface AdminValue {
   key: string;
@@ -35,18 +34,15 @@ export class AdminBarComponent implements OnInit {
   constructor(protected localStorage: LocalStorageService) {}
 
   ngOnInit() {
-    this.localStorage.getItem('adminBg').subscribe(data => {
-      this.adminBg = data;
-      console.log(data);
-    }, () => (this.adminBg = this.adminBgColors[0]));
-    this.localStorage.getItem('adminTheme').subscribe(data => {
-      this.adminTheme = data;
-      console.log(data);
-    }, () => (this.adminTheme = this.adminThemes[0]));
-    this.localStorage.getItem('callToAction').subscribe(data => {
-      this.callToAction = data;
-      console.log(data);
-    }, () => (this.callToAction = true));
+    this.localStorage
+      .getItem('adminBg', this.adminBgColors[0])
+      .subscribe(data => (this.adminBg = data));
+    this.localStorage
+      .getItem('adminTheme', this.adminThemes[0])
+      .subscribe(data => (this.adminTheme = data));
+    this.localStorage
+      .getItem('callToAction', true)
+      .subscribe(data => (this.callToAction = data));
   }
 
   setAdminBg = (key: string): void => {

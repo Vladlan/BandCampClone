@@ -20,7 +20,6 @@ export class BandPageComponent implements OnInit {
 
   ngOnInit() {
     const name = this.route.snapshot.params['name'].toLowerCase();
-    console.log(name);
     this.bandsService.getBandByName(name).subscribe(band => {
       this.band = band;
       this.bandLoaded = true;

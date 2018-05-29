@@ -16,7 +16,6 @@ export class MainPageComponent implements OnInit {
     this.bandsService.getAll().subscribe(bands => {
       this.bands = bands;
       this.bandsLoaded = true;
-      console.log(this.bands);
     });
   }
 }

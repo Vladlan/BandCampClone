@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BandsService } from 'app/services';
 import { BandNameGenreFilterPipe } from 'app/pipes';
 import { ActivatedRoute } from '@angular/router';
-import cloneDeep from 'lodash/cloneDeep';
 import { Band } from 'app/models';
 
 @Component({
@@ -25,8 +24,6 @@ export class BandsCardsListPageComponent implements OnInit {
     this.bandsService.getAll().subscribe(bands => {
       this.bands = bands;
       this.bandsLoaded = true;
-      console.log(this.bands);
-
       this.route.queryParams.subscribe(
         params =>
           !Object.keys(params).length
