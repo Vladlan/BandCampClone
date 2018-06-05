@@ -8,7 +8,6 @@
       "imageUrl": "https://f4.bcbits.com/img/a2482547434_2.jpg",
       "description": "description of band #1",
       "albums": [
-
         {
           "id": "b1.1",
           "title": "title of album #1",
@@ -16,7 +15,6 @@
           "band": "band #1 Title",
           "genre": "Electro"
         },
-
         {
           "id": "b1.2",
           "title": "title of album #2",

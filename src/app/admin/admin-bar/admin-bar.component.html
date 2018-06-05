@@ -1,6 +1,6 @@
-<aside class="admin"   [ngClass]="{'open': open}">
+<aside class="admin" [style.background-color]="adminBg.key" [ngClass]="{'open': open}">
   <div class="icon" (click)="toogleSide()" [ngClass]="open ? 'arrow-right' : 'arrow-left'"></div>
-  <div class="admin__inner" >
+  <div class="admin__inner" [style.color]="adminTheme.key" >
     <h1>Dashboard</h1>
     <div>
       <select (change)="setAdminBg($event.target.value)" >
