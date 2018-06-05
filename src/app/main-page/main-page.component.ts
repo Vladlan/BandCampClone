@@ -32,7 +32,7 @@ export class MainPageComponent implements OnInit {
   loadBandsInBandsService() {
     if (this.bandsCardsData.length === 0) {
       if (this.bandsService.bands.length === 0) {
-        this.bandsService.assignBandsToService()
+        this.bandsService.getBands()
           .subscribe(
             () => { this.assignBandsFromServiceToThisComponent(); },
             (err) => { console.log('error: ', err);

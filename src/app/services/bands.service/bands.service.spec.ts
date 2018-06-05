@@ -36,7 +36,7 @@ describe('UsersDataService', () => {
     const url = 'http://emptiness';
     const expectedError = `Http failure response for ${url}: 404 Not Found`;
 
-    bandsService.getBands(url)
+    bandsService.getBands()
       .subscribe(
         data => data,
         error => {

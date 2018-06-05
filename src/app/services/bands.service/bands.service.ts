@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators/tap';
 import cloneDeep from 'lodash/cloneDeep';
+import {environment} from '../../../environments/environment';
 
 
 @Injectable()
@@ -11,27 +13,8 @@ export class BandsService {
   bands = [];
 
   getBands(): Observable<any> {
-    const url = 'http://localhost:3000/bands';
-    return this.http.get<Observable<any>>(url);
+    return this.http.get<Observable<any>>(environment.databaseUrl + '/bands')
+      .pipe( tap(data => this.bands = cloneDeep(data)) );
   }
 
-  assignBandsToService() {
-
-    const ourBandsObservable = Observable.create((observer) =>  {
-      this.getBands()
-        .subscribe((bands: any) => {
-            this.bands = cloneDeep(bands);
-            observer.next(this.bands);
-          },
-          (err) => {
-            console.log('error: ', err);
-          },
-          () => {
-            return this.bands;
-          }
-        );
-    });
-
-    return ourBandsObservable;
-  }
 }

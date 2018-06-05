@@ -58,7 +58,7 @@ export class BandPageComponent implements OnInit {
   loadBandsInBandsService() {
     if (this.currentBandData === undefined) {
       if (this.bandsService.bands.length === 0) {
-        this.bandsService.assignBandsToService()
+        this.bandsService.getBands()
           .subscribe(
             () => { this.getCurrentBandDataFromService(); },
             (err) => { console.log('error: ', err); }
